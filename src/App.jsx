@@ -6,16 +6,16 @@ import Navigation from "./components/navigation/Navigation";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
-  const [coo, setCoo] = useState(0);
+  const [coo, setCoo] = useState(window.pageYOffset);
   const move = (e) => {
-    console.log(window.pageYOffset);
-    if (coo > window.pageYOffset) {
-      setShowNav(true);
-    } else {
-      setShowNav(false);
-    }
+    let currentScrollPos = window.pageYOffset;
 
-    setCoo(window.pageYOffset);
+    if (coo > currentScrollPos || currentScrollPos === 0) {
+      setShowNav(true)
+    } else {
+      setShowNav(false)
+    }
+    setCoo(currentScrollPos)
   };
 
   return (
