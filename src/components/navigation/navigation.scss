@@ -1,0 +1,32 @@
+.navigation {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  color: #fff;
+  display: flex;
+  &__wrapper {
+    display: flex;
+    margin: auto 0px;
+    position: relative;
+    width: 100%;
+    max-width: 1055px;
+    padding: 30px 40px;
+  }
+  &__phone {
+    display: flex;
+    margin-left: auto;
+  }
+  &__phone-item {
+    margin: auto;
+  }
+  &__icon {
+    margin-left: 32px;
+    fill: none;
+    &_dark{
+        filter: invert(100%);
+    }
+  }
+  // &__burger {
+  //   margin-left: 32px;
+  // }
+}

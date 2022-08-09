@@ -1,34 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./header.scss";
-import mobileLogo from "../../common/img/logo/Logo mobile.svg";
-import shoppingIcon from "../../common/img/icon/shopping.svg";
-import burgerIcon from "../../common/img/icon/burger.svg";
 import productPhoto from "../../common/img/product/header-product.png";
-import Menu from "../modal/menu/Menu";
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
   return (
     <header className="header">
       <div className="header__wrapper">
-        <nav className="navigation">
-          <img className="navigation__logo" src={mobileLogo} alt="logo" />
-          <ul className="navigation__phone">
-            <li className="navigation__phone-item">(067) 570 - 34 - 89</li>
-            <li className="navigation__phone-item" style={{ display: "none" }}>
-              (095) 458 - 67 - 23
-            </li>
-          </ul>
 
-          <img
-            className="navigation__shopping"
-            src={shoppingIcon}
-            alt="shopping"
-          />
-          <img className="navigation__burger" src={burgerIcon} alt="menu" onClick={()=>setShowMenu(!showMenu)}/>
-          <Menu showMenu={showMenu}/>
-        </nav>
         <div className="header__content">
           <div className="header__description">
             <h1 className="header__title">ТМН - ГРУП</h1>
@@ -38,7 +17,10 @@ const Header = () => {
               партнер в області профілактики інфекцій, пов’язаних з наданням
               медичної допомоги.
             </p>
-            <button className="header__button">Переглянути продукцію</button>
+            <Link to={"products"}>
+              {" "}
+              <button className="header__button">Переглянути продукцію</button>
+            </Link>
           </div>
           <div className="header__banner banner">
             <h3 className="banner__title">COVID-19 </h3>

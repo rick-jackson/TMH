@@ -1,21 +1,4 @@
-.navigation {
-  display: flex;
-  margin: auto 0px;
-  position: relative;
-  &__phone {
-    display: flex;
-    margin-left: auto;
-  }
-  &__phone-item {
-    margin: auto;
-  }
-  &__shopping {
-    margin-left: 32px;
-  }
-  &__burger {
-    margin-left: 32px;
-  }
-}
+
 
 .header {
   display: flex;
@@ -32,7 +15,7 @@
     // background-color: rgba(104, 104, 104, 0.322);
     max-width: 1055px;
     margin: auto;
-    padding: 30px 40px 45px 40px;
+    padding: 0px 40px 45px 40px;
   }
   &__content {
     display: flex;
@@ -46,7 +29,7 @@
   &__title {
     font-size: 50px;
     line-height: 74px;
-    margin-top: 40px;
+    margin-top: 95px;
     font-weight: 700;
   }
   &__subtitle {
