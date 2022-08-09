@@ -1,0 +1,90 @@
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1055px;
+  margin: auto;
+  padding: 40px;
+  padding-top: 50px;
+  font-weight: 700;
+  &__title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #232120;
+    font-size: 18px;
+    line-height: 17px;
+  }
+  &__item {
+    width: 100%;
+    max-width: 420px;
+    height: 170px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    position: relative;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    margin: auto;
+    display: flex;
+    margin-top: 5px;
+    transition: background-size 0.3s ease-out;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      // background-color: rgb(29, 41, 92);
+      background: rgba(29, 41, 92, 0.281);
+      position: absolute;
+      border-radius: 5px;
+      transition: background 0.3s ease-out;
+    }
+    &:hover {
+      background-size: 110%;
+      &::before {
+        background: #ffffff00;
+      }
+    }
+
+    &_1 {
+      margin-top: 0;
+      background-image: url("../../common/img/product/category/Rectangle 296.png");
+    }
+    &_2 {
+      background-image: url("../../common/img/product/category/Rectangle 297.png");
+    }
+    &_3 {
+      background-image: url("../../common/img/product/category/Rectangle 298.png");
+    }
+    &_4 {
+      background-image: url("../../common/img/product/category/Rectangle 299.png");
+    }
+    &_5 {
+      background-image: url("../../common/img/product/category/Rectangle 300.png");
+    }
+    &_6 {
+      background-image: url("../../common/img/product/category/Rectangle 301.png");
+    }
+  }
+  &__link {
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 17px;
+    color: #ffffff;
+    z-index: 1;
+    margin-left: auto;
+    margin-top: auto;
+    max-width: min-content;
+    float: right;
+  }
+  &__link-img {
+    width: 20px;
+    z-index: 1;
+    margin-top: auto;
+    padding-bottom: 3px;
+    margin-left: 5px;
+  }
+}

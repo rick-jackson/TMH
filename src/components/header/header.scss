@@ -1,0 +1,117 @@
+.navigation {
+  display: flex;
+  margin: auto 0px;
+  position: relative;
+  &__phone {
+    display: flex;
+    margin-left: auto;
+  }
+  &__phone-item {
+    margin: auto;
+  }
+  &__shopping {
+    margin-left: 32px;
+  }
+  &__burger {
+    margin-left: 32px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  background-image: url("../../common/img/background/doctor-holding-tweezers\ 1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__wrapper {
+    // background-color: rgba(104, 104, 104, 0.322);
+    max-width: 1055px;
+    margin: auto;
+    padding: 30px 40px 45px 40px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__description {
+    max-width: 550px;
+  }
+  &__title {
+    font-size: 50px;
+    line-height: 74px;
+    margin-top: 40px;
+    font-weight: 700;
+  }
+  &__subtitle {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  &__button {
+    background: #487acd;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 7px 0px;
+    width: 100%;
+    max-width: 256px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+  &__banner {
+    background: rgba(153, 171, 221, 0.26);
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 33px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    max-width: 750px;
+  }
+}
+
+.banner {
+  line-height: 21px;
+  &__title {
+    font-size: 18px;
+    line-height: 17px;
+  }
+  &__subtitle {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  &__product {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+  &__image {
+    padding: 25px 10px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  &__product-title {
+    font-size: 16px;
+
+    margin-top: 18px;
+  }
+  &__product-subtitle {
+    color: #84b6f5;
+    margin-top: 1px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__product-about {
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.08);
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,19 @@
+.about-us {
+  max-width: 1055px;
+  margin: auto;
+  padding: 0px 40px 35px 40px;
+  &__info {
+    color: #232120;
+    text-align: left;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  &__description {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
