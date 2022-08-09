@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import "../modal.scss";
-import arrowIcon from '../../../common/img/icon/arrow.svg'
 
 const Menu = ({ showMenu }) => {
   const [showProducts, setShowProducts] = useState(false)
-  // if (!showMenu) {
-  //   return null;
-  // }
   return (
     <div className="modal" style={showMenu ? {display: 'block'} : {display: 'none'}}>
       <ul className="modal__list">
