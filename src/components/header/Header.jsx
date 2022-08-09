@@ -18,7 +18,6 @@ const Header = () => {
               медичної допомоги.
             </p>
             <Link to={"products"}>
-              {" "}
               <button className="header__button">Переглянути продукцію</button>
             </Link>
           </div>

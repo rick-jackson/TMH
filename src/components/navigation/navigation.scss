@@ -4,9 +4,11 @@
   z-index: 1;
   color: #fff;
   display: flex;
+  transition: 0.5s;
+  // top: 0px;
   &__wrapper {
     display: flex;
-    margin: auto 0px;
+    margin: auto;
     position: relative;
     width: 100%;
     max-width: 1055px;

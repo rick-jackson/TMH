@@ -3,11 +3,12 @@ import './products.scss'
 
 
 
+
+
 const Products = () =>{
-
-
   return (
-    <section className="products"></section>
+    <section className="products">
+    </section>
   )
 
 }
