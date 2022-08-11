@@ -1,27 +1,61 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { translite } from "../../../utils/translit";
 import "../modal.scss";
 
 const Menu = ({ showMenu }) => {
-  const [showProducts, setShowProducts] = useState(false)
+  const [showProducts, setShowProducts] = useState(false);
+  const menuList = [
+    "рукавички нітрилові",
+    "рукавиці латексні",
+    "рукавички медичні",
+    "рукавички хірургічні",
+    "хімічна промисловість і фармацевтика",
+    "оглядові рукавички",
+    "стоматологічні",
+    "для клінігових робіт",
+    "сад / город",
+    "емонт і будівництво",
+    "для салонів краси",
+    "господарські рукавички",
+  ];
+
   return (
-    <div className="modal" style={showMenu ? {display: 'block'} : {display: 'none'}}>
+    <div
+      className="modal"
+      style={showMenu ? { display: "block" } : { display: "none" }}
+    >
       <ul className="modal__list">
-        <li className="modal__item" onClick={()=>setShowProducts(!showProducts)}>{`наша продукція`} <div className="modal__products-arrow" style={showProducts ? {transform: 'rotate(180deg)'} : {transform: 'rotate(0)'} } /></li>
-        <li style={showProducts ? {display: 'inline-block'} : {display: 'none'}}>
+        <li
+          className="modal__item"
+          onClick={() => setShowProducts(!showProducts)}
+        >
+          {`наша продукція`}{" "}
+          <div
+            className="modal__products-arrow"
+            style={
+              showProducts
+                ? { transform: "rotate(180deg)" }
+                : { transform: "rotate(0)" }
+            }
+          />
+        </li>
+        <li
+          style={
+            showProducts ? { display: "inline-block" } : { display: "none" }
+          }
+        >
           <ul className="modal__products">
-            <li className="modal__products-item">рукавички нітрилові</li>
-            <li className="modal__products-item">рукавиці латексні</li>
-            <li className="modal__products-item">харчова промисловість</li>
-            <li className="modal__products-item">рукавички медичні</li>
-            <li className="modal__products-item">рукавички хірургічні</li>
-            <li className="modal__products-item">хімічна промисловість і фармацевтика</li>
-            <li className="modal__products-item">оглядові рукавички</li>
-            <li className="modal__products-item">стоматологічні </li>
-            <li className="modal__products-item">для клінігових робіт</li>
-            <li className="modal__products-item">сад / город</li>
-            <li className="modal__products-item">ремонт і будівництво</li>
-            <li className="modal__products-item">для салонів краси</li>
-            <li className="modal__products-item">господарські рукавички</li>
+            {menuList.map((item) => (
+              <li key={item} className="modal__products-item">
+                <Link
+                  style={{ color: "#fff" }}
+                  to={`/products/${translite(item)}`}
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </li>
         <li className="modal__item">про компанію</li>

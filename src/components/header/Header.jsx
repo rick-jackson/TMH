@@ -37,7 +37,7 @@ const Header = () => {
                 <h5 className="banner__product-subtitle">
                   Examination gloves Eco®
                 </h5>
-                <p className="banner__product-about">ECO® Подвійна Система..</p>
+                <p className="banner__product-about">ECO® Подвійна Система Надягання Рукавичок для виявлення пункції..</p>
               </div>
             </div>
           </div>

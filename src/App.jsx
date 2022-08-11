@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
 import Navigation from "./components/navigation/Navigation";
+import { Provider } from "react-redux/es/exports";
+import { store } from "./store/store";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
@@ -21,9 +23,11 @@ function App() {
   return (
     <div className="App" onTouchMove={move}>
       <Router>
+      <Provider store={store}>
         <Navigation showNav={showNav} />
         <Main />
         <Footer />
+        </Provider>
       </Router>
     </div>
   );

@@ -6,6 +6,7 @@ const SelectedCategory = () => {
   return (
     <section className="category">
       <h3 className="category__title">Обирай свою категорію</h3>
+      <div className="category__content">
       <div className="category__item category__item_1">
         <span className="category__link">нітрилові рукавички</span>
         <img className="category__link-img" src={arrowIcon} alt="arrow" />
@@ -32,6 +33,7 @@ const SelectedCategory = () => {
       <div className="category__item category__item_6">
         <span className="category__link">ремонт та будівництво</span>
         <img className="category__link-img" src={arrowIcon} alt="arrow" />
+      </div>
       </div>
     </section>
   );

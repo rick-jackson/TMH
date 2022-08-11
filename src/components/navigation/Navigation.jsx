@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HandySvg } from "handy-svg";
 import "./navigation.scss";
@@ -11,6 +11,13 @@ const Navigation = ({ showNav }) => {
   const url = useLocation().pathname === "/";
 
   const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    if (!showNav) {
+      setShowMenu(false);
+    }
+  }, [showNav]);
+
   return (
     <nav
       className="navigation"
@@ -23,7 +30,10 @@ const Navigation = ({ showNav }) => {
         <Link to={"/"}>
           <img className="navigation__logo" src={mobileLogo} alt="logo" />
         </Link>
-        <ul className="navigation__phone">
+        <ul
+          className="navigation__phone"
+          style={url ? { color: "#fff" } : { color: "#000" }}
+        >
           <li className="navigation__phone-item">(067) 570 - 34 - 89</li>
           <li className="navigation__phone-item" style={{ display: "none" }}>
             (095) 458 - 67 - 23
@@ -46,8 +56,8 @@ const Navigation = ({ showNav }) => {
           height="25"
           onClick={() => setShowMenu(!showMenu)}
         />
+        <Menu showMenu={showMenu} />
       </div>
-      <Menu showMenu={showMenu} />
     </nav>
   );
 };
