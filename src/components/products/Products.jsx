@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React  from "react";
 import "./products.scss";
 import Product from "../product/Product";
 import { getProductsData } from "../../store/actions/products.actions";
