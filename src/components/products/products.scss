@@ -1,18 +1,17 @@
 .products {
-
   padding: 0px 40px;
   padding-top: 100px;
   max-width: 1024px;
   margin: auto;
-
+  display: flex;
+  flex-direction: column;
   &__wrapper {
     margin: auto;
     max-width: 100%;
-
     margin: auto;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    align-items: stretch;
   }
   &__title {
     font-weight: 700;

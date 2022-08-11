@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { translite } from "../../../utils/translit";
 import "../modal.scss";
+import { Link as ScrollLilnk} from "react-scroll";
 
 const Menu = ({ showMenu }) => {
   const [showProducts, setShowProducts] = useState(false);
@@ -59,7 +60,16 @@ const Menu = ({ showMenu }) => {
             ))}
           </ul>
         </li>
-        <li className="modal__item">про компанію</li>
+        <ScrollLilnk
+          activeClass="active"
+          to="footer"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <li className="modal__item">про компанію</li>
+        </ScrollLilnk>
         <li className="modal__item">блог</li>
         <li className="modal__item">Наші контакти</li>
         <li className="modal__item">Пошук</li>

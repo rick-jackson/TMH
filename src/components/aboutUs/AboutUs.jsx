@@ -3,7 +3,7 @@ import "./aboutUs.scss";
 
 const AboutUs = () => {
   return (
-    <section className="about-us">
+    <section className="about-us" id="footer">
       <div className="about-us__info">
         <h3 className="about-us__title">ТОВ «ТМН- ГРУП УКРАЇНА»</h3>
         <p className="about-us__description">

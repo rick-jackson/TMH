@@ -9,6 +9,7 @@ import burgerIcon from "../../common/img/icon/burger.svg";
 import { connect } from "react-redux";
 import { cartSelector } from "../../store/selectors/cart.selector";
 
+
 const Navigation = ({ showNav, productsData }) => {
   const url = useLocation().pathname === "/";
 

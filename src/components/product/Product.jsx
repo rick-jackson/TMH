@@ -6,7 +6,6 @@ import { addProduct } from "../../store/actions/cart.actions";
 const Product = ({ product, title, addProduct }) => {
   return (
     <div className="product">
-      <div className="product__wrapper">
         {product.discount && (
           <div className="product__discount">-{product.discount}%</div>
         )}
@@ -47,7 +46,6 @@ const Product = ({ product, title, addProduct }) => {
         </div>
         <button className="product__add-cart" onClick={() => addProduct(product)}>В корзину</button>
       </div>
-    </div>
   );
 };
 
