@@ -1,9 +1,13 @@
 import React from "react";
 import "./product.scss";
 
-const Product = ({ product }) => {
+const Product = ({ product, title }) => {
   return (
     <div className="product">
+      <span>{title}</span>
+      {product.discount && (
+        <div className="product__discount">-{product.discount}%</div>
+      )}
       <img className="product__image" src={product.image} alt="product" />
       <div className="product__about">
         <h5 className="product__title">{product.name}</h5>
@@ -23,12 +27,18 @@ const Product = ({ product }) => {
         </div>
         <div className="product__price">
           <span className="product__price-item">
-            <span className="product__price_word">Ціна:</span> {product.price}{" "}
+            <span className="product__price_word">Ціна:</span>{" "}
+            {product.discount
+              ? (
+                  product.price -
+                  (product.price * product.discount) / 100
+                ).toFixed(2)
+              : product.price}{" "}
             <span className="product__price-item_currency">₴</span>
           </span>
-          {product.oldPrice && (
+          {product.discount && (
             <span className=" product__price-item product__price-item_old">
-              {product.oldPrice}
+              {product.price}
             </span>
           )}
         </div>

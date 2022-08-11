@@ -51,6 +51,7 @@ const Menu = ({ showMenu }) => {
                 <Link
                   style={{ color: "#fff" }}
                   to={`/products/${translite(item)}`}
+                  state={item}
                 >
                   {item}
                 </Link>
