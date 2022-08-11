@@ -6,8 +6,10 @@ import Menu from "../modal/menu/Menu";
 import mobileLogo from "../../common/img/logo/Logo mobile.svg";
 import shoppingIcon from "../../common/img/icon/shopping.svg";
 import burgerIcon from "../../common/img/icon/burger.svg";
+import { connect } from "react-redux";
+import { cartSelector } from "../../store/selectors/cart.selector";
 
-const Navigation = ({ showNav }) => {
+const Navigation = ({ showNav, productsData }) => {
   const url = useLocation().pathname === "/";
 
   const [showMenu, setShowMenu] = useState(false);
@@ -22,7 +24,7 @@ const Navigation = ({ showNav }) => {
     <nav
       className="navigation"
       style={
-        (url ? { color: "#fff" } : { color: "#000" },
+        (url ? { color: "#fff" } : { color: "#000", background: "#fff" },
         showNav ? { top: "0px" } : { top: "-100px" })
       }
     >
@@ -39,14 +41,21 @@ const Navigation = ({ showNav }) => {
             (095) 458 - 67 - 23
           </li>
         </ul>
-        <HandySvg
-          src={shoppingIcon}
-          className={
-            url ? "navigation__icon" : " navigation__icon navigation__icon_dark"
-          }
-          width="25"
-          height="25"
-        />
+        <Link to={"cart"}>
+          <div className="navigation__icon-cart">
+            <div className="shopping">{productsData.length}</div>
+          <HandySvg
+            src={shoppingIcon}
+            className={
+              url
+                ? "navigation__icon"
+                : " navigation__icon navigation__icon_dark"
+            }
+            width="25"
+            height="25"
+          />
+          </div>
+        </Link>
         <HandySvg
           src={burgerIcon}
           className={
@@ -62,4 +71,11 @@ const Navigation = ({ showNav }) => {
   );
 };
 
-export default Navigation;
+const mapState = (state) => {
+  return {
+    productsData: cartSelector(state),
+  };
+};
+const connector = connect(mapState);
+
+export default connector(Navigation);

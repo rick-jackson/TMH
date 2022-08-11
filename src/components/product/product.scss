@@ -1,5 +1,6 @@
 .product {
-  max-width: 100%;
+  margin: auto;
+  width: 100%;
   color: #232120;
   font-weight: 700;
   box-shadow: -4px -4px 25px rgba(40, 66, 144, 0.05),
@@ -8,8 +9,9 @@
   margin-top: 10px;
   padding: 10px 20px 30px 20px;
   position: relative;
-  &:first-child {
-    margin-top: 0;
+  display: flex;
+  &__add-cart {
+    margin-top: auto;
   }
 
   &__discount {
@@ -69,7 +71,7 @@
     font-size: 15px;
     line-height: 22px;
     flex-wrap: wrap;
-    input{
+    input {
       margin-right: 5px;
     }
   }
@@ -109,5 +111,11 @@
       color: #b8bdc0;
       text-decoration: line-through;
     }
+  }
+}
+
+@media (min-width: 820px) {
+  .product {
+    max-width: 49%;
   }
 }

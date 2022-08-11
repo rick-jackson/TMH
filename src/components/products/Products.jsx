@@ -10,8 +10,11 @@ const Products = ({ productsData }) => {
 
 const title = useLocation().state
 
+
+
   return (
     <section className="products">
+      <div className="products__title">Наша продукція</div>
       <div className="products__wrapper">
       {productsData.map((product) => (
         <Product key={product.id} product={product} title={title}/>
