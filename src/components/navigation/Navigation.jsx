@@ -66,7 +66,7 @@ const Navigation = ({ showNav, productsData }) => {
           height="25"
           onClick={() => setShowMenu(!showMenu)}
         />
-        <Menu showMenu={showMenu} />
+        <Menu showMenu={showMenu} setShowMenu={setShowMenu}/>
       </div>
     </nav>
   );

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { translite } from "../../../utils/translit";
 import "../modal.scss";
-import { Link as ScrollLilnk} from "react-scroll";
+import { Link as ScrollLilnk } from "react-scroll";
 
-const Menu = ({ showMenu }) => {
+const Menu = ({ showMenu, setShowMenu }) => {
   const [showProducts, setShowProducts] = useState(false);
   const menuList = [
     "рукавички нітрилові",
@@ -60,16 +60,22 @@ const Menu = ({ showMenu }) => {
             ))}
           </ul>
         </li>
+
         <ScrollLilnk
           activeClass="active"
           to="footer"
-          spy={true}
+          spy={false}
           smooth={true}
           offset={-70}
-          duration={500}
+          duration={1000}
         >
-          <li className="modal__item">про компанію</li>
+          <li className="modal__item" onClick={() => setShowMenu(false)}>
+            <Link style={{ color: "#fff", marginTop: "10px" }} to="/">
+              про компанію{" "}
+            </Link>
+          </li>
         </ScrollLilnk>
+
         <li className="modal__item">блог</li>
         <li className="modal__item">Наші контакти</li>
         <li className="modal__item">Пошук</li>
