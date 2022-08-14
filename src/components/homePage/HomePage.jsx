@@ -4,6 +4,7 @@ import "./homePage.scss";
 import AboutUs from "../aboutUs/AboutUs";
 import Header from "../header/Header";
 import Mailing from "../mailing/Mailing";
+import Benefits from "../benefits/Benefits.jsx";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <SelectedCategory/>
       <AboutUs/>
       <Mailing/>
+      <Benefits/>
     </section>
   );
 };
