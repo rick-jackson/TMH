@@ -47,13 +47,13 @@
     margin-top: 25px;
   }
   &__banner {
-    background: rgba(153, 171, 221, 0.26);
-    border-radius: 5px;
-    padding: 30px;
-    margin-top: 33px;
-    text-align: left;
-    backdrop-filter: blur(10px);
     max-width: 750px;
+    margin-top: 33px;
+    padding: 30px;
+    text-align: left;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    background: rgba(153, 171, 221, 0.26);
   }
 }
 
