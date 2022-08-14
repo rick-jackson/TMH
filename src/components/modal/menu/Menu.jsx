@@ -63,14 +63,14 @@ const Menu = ({ showMenu, setShowMenu }) => {
 
         <ScrollLilnk
           activeClass="active"
-          to="footer"
+          to="about"
           spy={false}
           smooth={true}
           offset={-70}
           duration={1000}
         >
           <li className="modal__item" onClick={() => setShowMenu(false)}>
-            <Link style={{ color: "#fff", marginTop: "10px" }} to="/">
+            <Link style={{ color: "#fff", marginTop: "10px"}} to="/">
               про компанію{" "}
             </Link>
           </li>

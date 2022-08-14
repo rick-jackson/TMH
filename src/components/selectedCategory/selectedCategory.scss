@@ -5,7 +5,7 @@
   padding-top: 50px;
   margin: auto;
 
-  &__content{
+  &__content {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -34,9 +34,7 @@
     margin-top: 5px;
     transition: background-size 0.3s ease-out;
     cursor: pointer;
-    &:first-child{
-      margin-top: 5px;
-    }
+
 
     &::before {
       content: "";
@@ -97,21 +95,27 @@
   }
 }
 
-
-
-
 @media (min-width: 620px) {
-  .category{
-    &__item{
-      max-width: 270px;
+  .category {
+    &__content {
+      gap: 5px;
+    }
+    &__item {
+      margin: 0;
+      width: calc(50% - 5px);
     }
   }
 }
 
-@media (min-width: 1050px) {
-.category{
-  &__item{
-    max-width: 320px;
+@media (min-width: 890px) {
+  .category {
+    &_content {
+      gap: 10px;
+      margin: 0;
+    }
+    &__item {
+      margin: 0;
+      max-width: calc(33.33% - 4px);
+    }
   }
-}
 }
