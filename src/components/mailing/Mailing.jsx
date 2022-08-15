@@ -28,12 +28,12 @@ const Mailing = () => {
             />
             <input
               className="mailing-form__input"
-              type="text"
+              type="tel"
               placeholder="Номер телефону"
             />
             <input
               className="mailing-form__input"
-              type="text"
+              type="email"
               placeholder="E-mail"
             />
             <button className="mailing-form__button" type="submit">

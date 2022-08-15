@@ -1,0 +1,65 @@
+.footer {
+  background-image: url("../../common/img/background/Rectangle\ 229.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  color: #fff;
+  &__wrapper {
+    max-width: 1055px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 30px;
+  }
+  &__nav-list {
+    text-transform: uppercase;
+  }
+  &__list-item {
+    margin-top: 7px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    a {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #fff;
+    }
+  }
+  &__phone {
+    display: flex;
+    margin-right: auto;
+  }
+  &__phone-title {
+    font-weight: 700;
+    margin-right: 10px;
+  }
+  &__email {
+    margin-top: 10px;
+    a {
+      margin-left: 10px;
+    }
+  }
+  &__email-title {
+    font-weight: 700;
+  }
+  margin-right: auto;
+  &__copyright {
+    display: inline-block;
+    margin-top: 40px;
+  }
+  &__logo {
+    display: none;
+  }
+}
