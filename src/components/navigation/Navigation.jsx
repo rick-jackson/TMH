@@ -9,7 +9,6 @@ import burgerIcon from "../../common/img/icon/burger.svg";
 import { connect } from "react-redux";
 import { cartSelector } from "../../store/selectors/cart.selector";
 
-
 const Navigation = ({ showNav, productsData }) => {
   const url = useLocation().pathname === "/";
 
@@ -26,10 +25,11 @@ const Navigation = ({ showNav, productsData }) => {
       className="navigation"
       style={
         (url ? { color: "#fff" } : { color: "#000", background: "#fff" },
-        showNav ? { top: "0px" } : { top: "-100px" })
+        showNav ? { top: "0px" } : { top: "-120px" })
       }
     >
       <div className="navigation__wrapper">
+        <div className="navigation__container">
         <Link to={"/"}>
           <img className="navigation__logo" src={mobileLogo} alt="logo" />
         </Link>
@@ -45,28 +45,32 @@ const Navigation = ({ showNav, productsData }) => {
         <Link to={"cart"}>
           <div className="navigation__icon-cart">
             <div className="shopping">{productsData.length}</div>
-          <HandySvg
-            src={shoppingIcon}
-            className={
-              url
-                ? "navigation__icon"
-                : " navigation__icon navigation__icon_dark"
-            }
-            width="25"
-            height="25"
-          />
+            <HandySvg
+              src={shoppingIcon}
+              className={
+                url
+                  ? "navigation__icon"
+                  : " navigation__icon navigation__icon_dark"
+              }
+              width="25"
+              height="25"
+            />
           </div>
         </Link>
         <HandySvg
           src={burgerIcon}
           className={
-            url ? "navigation__icon" : " navigation__icon navigation__icon_dark"
+            url
+              ? "navigation__burger navigation__icon"
+              : "navigation__burger navigation__icon navigation__icon_dark"
           }
           width="25"
           height="25"
           onClick={() => setShowMenu(!showMenu)}
         />
-        <Menu showMenu={showMenu} setShowMenu={setShowMenu}/>
+        <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
+        </div>
+      <Menu showMenu={true}/>
       </div>
     </nav>
   );

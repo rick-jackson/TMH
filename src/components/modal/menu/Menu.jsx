@@ -78,8 +78,8 @@ const Menu = ({ showMenu, setShowMenu }) => {
 
         <li className="modal__item">блог</li>
         <li className="modal__item">Наші контакти</li>
-        <li className="modal__item">Пошук</li>
-        <li className="modal__item">мова</li>
+        <li className="modal__item modal__item_mobile">Пошук</li>
+        <li className="modal__item modal__item_mobile">мова</li>
       </ul>
     </div>
   );
