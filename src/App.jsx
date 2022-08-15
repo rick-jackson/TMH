@@ -8,22 +8,24 @@ import { store } from "./store/store";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
-  const [coo, setCoo] = useState(window.pageYOffset);
-  const handleScroll = (e) => {
-    // console.log(e)
-    let currentScrollPos = window.pageYOffset;
 
-    if (coo > currentScrollPos || currentScrollPos === 0) {
-      setShowNav(true);
-    } else {
+  let lastScroll = 0;
+  const defaultOffset = 200;
+
+  const scrollPosition = () =>
+    window.pageYOffset || document.documentElement.scrollTop;
+  const handleScroll = () => {
+    if (scrollPosition() > lastScroll && scrollPosition() > defaultOffset) {
       setShowNav(false);
+    } else if (scrollPosition() < lastScroll) {
+      setShowNav(true);
     }
-    setCoo(currentScrollPos);
+
+    lastScroll = scrollPosition();
   };
 
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
-    document.addEventListener("touch", handleScroll);
+    window.addEventListener("scroll", handleScroll);
   }, []);
 
   return (
