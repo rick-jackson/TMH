@@ -8,6 +8,7 @@ import shoppingIcon from "../../common/img/icon/shopping.svg";
 import burgerIcon from "../../common/img/icon/burger.svg";
 import { connect } from "react-redux";
 import { cartSelector } from "../../store/selectors/cart.selector";
+import desktopLogo from '../../common/img/logo/logo-desktop.svg'
 
 const Navigation = ({ showNav, productsData, lastScroll }) => {
   const url = useLocation().pathname === "/";
@@ -31,7 +32,10 @@ const Navigation = ({ showNav, productsData, lastScroll }) => {
       <div className="navigation__wrapper">
         <div className="navigation__container">
           <Link to={"/"}>
-            <img className="navigation__logo" src={mobileLogo} alt="logo" />
+            <img className="navigation__logo navigation__logo_mobile" src={mobileLogo} alt="logo" />
+          </Link>
+          <Link to={"/"}>
+            <img className="navigation__logo navigation__logo_desktop" src={desktopLogo} alt="logo" />
           </Link>
           <ul
             className="navigation__phone"
@@ -42,6 +46,9 @@ const Navigation = ({ showNav, productsData, lastScroll }) => {
               (095) 458 - 67 - 23
             </li>
           </ul>
+
+        <input className="navigation__search" type="text" placeholder="Пошук"/>
+
           <Link to={"cart"}>
             <div className="navigation__icon-cart">
               <div className="shopping">{productsData.length}</div>

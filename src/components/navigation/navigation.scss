@@ -13,9 +13,16 @@
     margin: auto;
     width: 100%;
     padding: 30px 40px;
-
   }
-  &__container{
+  &__logo {
+    &_desktop {
+      display: none;
+    }
+  }
+  &__search {
+    display: none;
+  }
+  &__container {
     display: flex;
     position: relative;
   }
@@ -63,6 +70,22 @@
     flex-direction: column;
     &__burger {
       display: none;
+    }
+    &__logo {
+      &_mobile {
+        display: none;
+      }
+      &_desktop {
+        display: block;
+        height: 30px;
+      }
+    }
+    &__search {
+      display: block;
+      margin-left: 35px;
+      background: rgba(244, 245, 248, 0.7);
+      border-radius: 5px;
+      padding-left: 15px;
     }
   }
 }
