@@ -45,6 +45,7 @@ const Menu = ({ showMenu, setShowMenu, type }) => {
             }
           />
         </li>
+        <li className="modal__item_products">
         <ul
           className="modal__products"
           style={
@@ -63,7 +64,7 @@ const Menu = ({ showMenu, setShowMenu, type }) => {
             </li>
           ))}
         </ul>
-
+        </li>
         <ScrollLilnk
           activeClass="active"
           to="about"
