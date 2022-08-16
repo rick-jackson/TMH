@@ -53,12 +53,11 @@ const Menu = ({ showMenu, setShowMenu, type }) => {
           }
         >
           {menuList.map((item) => (
-            <li key={item} className="modal__products-item">
+            <li key={item} className="modal__products-item" onClick={()=>setShowProducts(false)}>
               <Link
                 style={{ color: "#fff" }}
                 to={`/products/${translite(item)}`}
-                state={item}
-              >
+                state={item}>
                 {item}
               </Link>
             </li>
@@ -80,10 +79,10 @@ const Menu = ({ showMenu, setShowMenu, type }) => {
           </li>
         </ScrollLilnk>
 
-        <li className="modal__item">блог</li>
-        <li className="modal__item">Наші контакти</li>
-        <li className="modal__item modal__item_mobile">Пошук</li>
-        <li className="modal__item modal__item_mobile">мова</li>
+        <li className="modal__item"  onClick={() => setShowMenu(false)}>блог</li>
+        <li className="modal__item"  onClick={() => setShowMenu(false)}>Наші контакти</li>
+        <li className="modal__item modal__item_mobile"  onClick={() => setShowMenu(false)}>Пошук</li>
+        <li className="modal__item modal__item_mobile"  onClick={() => setShowMenu(false)}>мова</li>
       </ul>
     </div>
   );
