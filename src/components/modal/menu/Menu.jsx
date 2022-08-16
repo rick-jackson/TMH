@@ -45,25 +45,24 @@ const Menu = ({ showMenu, setShowMenu, type }) => {
             }
           />
         </li>
-        <li
+        <ul
+          className="modal__products"
           style={
             showProducts ? { display: "inline-block" } : { display: "none" }
           }
         >
-          <ul className="modal__products">
-            {menuList.map((item) => (
-              <li key={item} className="modal__products-item">
-                <Link
-                  style={{ color: "#fff" }}
-                  to={`/products/${translite(item)}`}
-                  state={item}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </li>
+          {menuList.map((item) => (
+            <li key={item} className="modal__products-item">
+              <Link
+                style={{ color: "#fff" }}
+                to={`/products/${translite(item)}`}
+                state={item}
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
         <ScrollLilnk
           activeClass="active"

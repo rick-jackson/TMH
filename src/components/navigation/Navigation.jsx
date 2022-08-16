@@ -24,7 +24,7 @@ const Navigation = ({ showNav, productsData, lastScroll }) => {
   const stylesNav = {
     color: url ? "#fff" : "#000",
     background: lastScroll > 0 ? "#487bcdcc" : "none",
-    top: showNav ? "0px" : "-150px",
+    top: showNav ? "0px" : "-155px",
   };
 
   return (
