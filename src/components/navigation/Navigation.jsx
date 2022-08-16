@@ -75,9 +75,9 @@ const Navigation = ({ showNav, productsData, lastScroll }) => {
             height="25"
             onClick={() => setShowMenu(!showMenu)}
           />
-          <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
+          <Menu showMenu={showMenu} setShowMenu={setShowMenu} type={'mobile'}/>
         </div>
-        <Menu showMenu={true} />
+        <Menu showMenu={true} type={'desktop'}/>
       </div>
     </nav>
   );

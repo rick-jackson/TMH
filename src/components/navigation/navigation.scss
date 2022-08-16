@@ -21,6 +21,7 @@
   }
   &__search {
     display: none;
+
   }
   &__container {
     display: flex;
@@ -86,6 +87,7 @@
       background: rgba(244, 245, 248, 0.7);
       border-radius: 5px;
       padding-left: 15px;
+      max-width:  290px;
     }
   }
 }

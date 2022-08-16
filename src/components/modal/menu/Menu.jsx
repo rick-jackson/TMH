@@ -4,7 +4,7 @@ import { translite } from "../../../utils/translit";
 import "../modal.scss";
 import { Link as ScrollLilnk } from "react-scroll";
 
-const Menu = ({ showMenu, setShowMenu }) => {
+const Menu = ({ showMenu, setShowMenu, type }) => {
   const [showProducts, setShowProducts] = useState(false);
   const menuList = [
     "рукавички нітрилові",
@@ -21,10 +21,14 @@ const Menu = ({ showMenu, setShowMenu }) => {
     "господарські рукавички",
   ];
 
+  const styleMobileMenu = {
+    display: showMenu ? "block" : "none",
+  };
+
   return (
     <div
-      className="modal"
-      style={showMenu ? { display: "block" } : { display: "none" }}
+      className={`modal modal_${type}`}
+      style={type === "mobile" ? styleMobileMenu : {}}
     >
       <ul className="modal__list">
         <li
@@ -70,7 +74,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
           duration={1000}
         >
           <li className="modal__item" onClick={() => setShowMenu(false)}>
-            <Link style={{ color: "#fff", marginTop: "10px"}} to="/">
+            <Link style={{ color: "#fff" }} to="/">
               про компанію{" "}
             </Link>
           </li>
