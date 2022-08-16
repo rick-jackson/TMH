@@ -8,34 +8,34 @@ import { store } from "./store/store";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
-  const [lastScroll, setLastScroll] = useState(0)
+  const [scroll, setScroll] = useState(0)
 
-  // let lastScroll = 0;
-  const defaultOffset = 200;
-
+  let lastScroll = 0;
   const scrollPosition = () =>
     window.pageYOffset || document.documentElement.scrollTop;
   const handleScroll = () => {
+    const defaultOffset = 200;
     if (scrollPosition() > lastScroll && scrollPosition() > defaultOffset) {
       setShowNav(false);
     } else if (scrollPosition() < lastScroll) {
       setShowNav(true);
     }
 
-    setLastScroll(scrollPosition());
+    lastScroll = scrollPosition();
+    setScroll(scrollPosition())
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return window.addEventListener("scroll", handleScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lastScroll]);
+  }, []);
 
   return (
     <div className="App">
       <Router>
         <Provider store={store}>
-          <Navigation showNav={showNav} lastScroll={lastScroll}/>
+          <Navigation showNav={showNav} lastScroll={scroll} />
           <Main />
           <Footer />
         </Provider>
