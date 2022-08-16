@@ -8,8 +8,9 @@ import { store } from "./store/store";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
+  const [lastScroll, setLastScroll] = useState(0)
 
-  let lastScroll = 0;
+  // let lastScroll = 0;
   const defaultOffset = 200;
 
   const scrollPosition = () =>
@@ -21,20 +22,20 @@ function App() {
       setShowNav(true);
     }
 
-    lastScroll = scrollPosition();
+    setLastScroll(scrollPosition());
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return window.addEventListener("scroll", handleScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [lastScroll]);
 
   return (
     <div className="App">
       <Router>
         <Provider store={store}>
-          <Navigation showNav={showNav} />
+          <Navigation showNav={showNav} lastScroll={lastScroll}/>
           <Main />
           <Footer />
         </Provider>

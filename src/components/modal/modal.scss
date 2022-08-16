@@ -17,6 +17,9 @@
 //   animation: 0.3s linear 0s alternate show-menu;
 //   color: #fff;
 
+// &_desktop{
+//   display: none;
+// }
 //   &__item {
 //     font-size: 14px;
 //     line-height: 21px;
@@ -63,14 +66,14 @@
 //   }
 // }
 
-// @keyframes show-menu {
-//   0% {
-//     max-height: 0px;
-//   }
-//   100% {
-//     min-height: 100px;
-//   }
-// }
+@keyframes show-menu {
+  0% {
+    max-height: 0px;
+  }
+  100% {
+    min-height: 100px;
+  }
+}
 
 @media (min-width: 580px) {
   .modal {
