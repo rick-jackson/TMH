@@ -29,10 +29,18 @@
   }
   &__phone {
     display: flex;
+    flex-direction: column;
     margin-left: auto;
+    position: relative;
+
   }
   &__phone-item {
     margin: auto;
+    cursor: pointer;
+    &_hiden{
+      position: absolute;
+      top: 30px;
+    }
   }
   &__icon {
     margin-left: 32px;

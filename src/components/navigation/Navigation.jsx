@@ -14,6 +14,7 @@ const Navigation = ({ showNav, productsData, lastScroll }) => {
   const url = useLocation().pathname === "/";
 
   const [showMenu, setShowMenu] = useState(false);
+  const [showPhone, setShowPhone] = useState(false)
 
   useEffect(() => {
     if (!showNav) {
@@ -41,8 +42,8 @@ const Navigation = ({ showNav, productsData, lastScroll }) => {
             className="navigation__phone"
             style={url ? { color: "#fff" } : { color: "#000" }}
           >
-            <li className="navigation__phone-item">(067) 570 - 34 - 89</li>
-            <li className="navigation__phone-item" style={{ display: "none" }}>
+            <li className="navigation__phone-item" onClick={()=>setShowPhone(!showPhone)}>(067) 570 - 34 - 89</li>
+            <li className="navigation__phone-item navigation__phone-item_hiden" style={{display: showPhone ? 'inline-block' : 'none'}} >
               (095) 458 - 67 - 23
             </li>
           </ul>
