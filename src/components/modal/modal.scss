@@ -120,6 +120,9 @@
       text-transform: uppercase;
       cursor: pointer;
       margin-top: 0;
+      &_mobile {
+        display: none;
+      }
       &_products {
         position: absolute;
         left: 0;
@@ -127,9 +130,7 @@
         width: 50%;
       }
     }
-    &_mobile {
-      display: none;
-    }
+
     &_desktop {
       display: block;
     }
