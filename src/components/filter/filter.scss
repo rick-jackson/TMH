@@ -1,6 +1,20 @@
 .filter {
   margin-right: 20px;
-  min-width: 190px;
+  // min-width: 190px;
+  position: absolute;
+  z-index: 10;
+  background-color: burlywood;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  background: #487acd;
+  box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.15),
+    2px 2px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 5px;
+  top: 40px;
+  color: #fff;
+  right: -17px;
   &__title {
     font-weight: 700;
     font-size: 18px;
@@ -27,13 +41,16 @@
     span {
       height: 1px;
       width: 17px;
-      background-color: #000;
+      background-color: #fff;
     }
   }
   &__item-value {
-    border: 1px solid #232120;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
     border-radius: 2px;
-    max-width: 80px;
+    max-width: 45%;
+
     height: 30px;
     text-align: center;
     font-size: 16px;
@@ -47,6 +64,22 @@
     margin-top: 10px;
     input {
       margin-right: 10px;
+    }
+  }
+}
+
+@media (min-width: 840px) {
+  .filter {
+    position: relative;
+    max-width: 240px;
+    padding: 30px;
+    background: none;
+    box-shadow: none;
+    top: 0px;
+    color: #000;
+    &__item-value {
+      border: 1px solid #000;
+      color: #000;
     }
   }
 }

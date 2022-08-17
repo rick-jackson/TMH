@@ -18,7 +18,7 @@ const Product = ({ product, addProduct }) => {
           <span className="product__description_bold">Опис:</span>{" "}
           {product.description}
         </p>
-        <div className="product__size">
+        {/* <div className="product__size">
           Розміри:{" "}
           {product.size.map((item) => (
             <div className="product__size-item" key={item}>
@@ -32,7 +32,7 @@ const Product = ({ product, addProduct }) => {
               <label htmlFor="size">{item}</label>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className="product__price">
           <span className="product__price-item">
             <span className="product__price_word">Ціна:</span>{" "}
@@ -50,13 +50,13 @@ const Product = ({ product, addProduct }) => {
             </span>
           )}
         </div>
-      </div>
       <button
         className="product__add-cart"
         onClick={() => addProduct({ ...product, selectedSize })}
-      >
+        >
         В корзину
       </button>
+        </div>
     </div>
   );
 };

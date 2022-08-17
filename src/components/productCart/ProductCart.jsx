@@ -19,7 +19,7 @@ const ProductCart = ({product, removeProduct}) =>{
       <span className="product__description_bold">Опис:</span>{" "}
       {product.description}
     </p>
-    <div className="product__size">
+    {/* <div className="product__size">
       Розміри:{" "}
       {product.size.map((item) => (
         <div className="product__size-item" key={item}>
@@ -27,7 +27,7 @@ const ProductCart = ({product, removeProduct}) =>{
           <label htmlFor="size">{item}</label>
         </div>
       ))}
-    </div>
+    </div> */}
     <div className="product__price">
       <span className="product__price-item">
         <span className="product__price_word">Ціна:</span>{" "}

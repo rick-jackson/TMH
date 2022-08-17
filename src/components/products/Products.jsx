@@ -6,6 +6,7 @@ import { productsSelector } from "../../store/selectors/products.selectors";
 import { connect } from "react-redux";
 import {useLocation} from 'react-router-dom'
 import Filter from "../filter/Filter";
+import filterIcon from '../../common/img/icon/filter.svg'
 
 const Products = ({ productsData }) => {
 
@@ -15,10 +16,10 @@ const title = useLocation().state
 
   return (
     <section className="products">
-      <Filter/>
       <div className="products__wrapper">
-      <div className="products__title">Наша продукція</div>
+      <Filter/>
       <div className="products__container">
+      <div className="products__title">Наша продукція <img className="products__filter" src={filterIcon} alt="" /></div>
       {productsData.map((product) => (
         <Product key={product.id} product={product} title={title}/>
       ))}

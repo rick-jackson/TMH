@@ -7,6 +7,8 @@ const Filter = () => {
   const [priceValue, setPriceValue] = useState([20, 40]);
   return (
     <section className="filter">
+    
+      <div className="filter__wrapper">
       <h4 className="filter__title">Фільтр по параметрам</h4>
       <form className="filter__form" action="#">
         <div className="filter__item filter__item_price">
@@ -72,6 +74,7 @@ const Filter = () => {
           </div>
         </div>
       </form>
+      </div>
     </section>
   );
 };
