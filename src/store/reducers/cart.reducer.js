@@ -1,4 +1,4 @@
-import { ADD_PRODUCT } from "../actions/cart.actions";
+import { ADD_PRODUCT, REMOVE_PRODUCT } from "../actions/cart.actions";
 
 const initialState = {
   cartData: [],
@@ -7,10 +7,19 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT: {
-      console.log(action.payload);
-      state.cartData.push(action.payload.product);
-      return state;
+      return {
+        ...state,
+        cartData: [...state.cartData, action.payload.product],
+      };
     }
+
+    case REMOVE_PRODUCT: {
+      return {
+        ...state,
+        cartData: state.cartData.filter((el) => el.id !== action.payload.id),
+      };
+    }
+
     default: {
       return state;
     }

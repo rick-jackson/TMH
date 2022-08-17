@@ -6,24 +6,31 @@
     font-size: 18px;
     line-height: 27px;
   }
-  &__price {
-    margin-top: 30px;
+  &__item {
+    &_price {
+      margin-top: 30px;
+    }
   }
-  &__price-title {
+  &__item-title {
     margin-top: 10px;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 10px;
   }
-  &__price-values {
+  &__item-values {
     max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
+    span {
+      height: 1px;
+      width: 17px;
+      background-color: #000;
+    }
   }
-  &__price-value {
+  &__item-value {
     border: 1px solid #232120;
     border-radius: 2px;
     max-width: 80px;
@@ -31,5 +38,15 @@
     text-align: center;
     font-size: 16px;
     line-height: 24px;
+  }
+  &__item-selected {
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    input {
+      margin-right: 10px;
+    }
   }
 }
