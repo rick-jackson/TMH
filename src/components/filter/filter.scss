@@ -71,12 +71,14 @@
 @media (min-width: 840px) {
   .filter {
     position: relative;
-    max-width: 240px;
-    padding: 30px;
+    max-width: 200px;
+    padding: 10px;
     background: none;
     box-shadow: none;
     top: 0px;
     color: #000;
+    left: 0;
+    padding-left: 0;
     &__item-value {
       border: 1px solid #000;
       color: #000;
