@@ -1,0 +1,35 @@
+.filter {
+  margin-right: 20px;
+  min-width: 190px;
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  &__price {
+    margin-top: 30px;
+  }
+  &__price-title {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+  &__price-values {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  &__price-value {
+    border: 1px solid #232120;
+    border-radius: 2px;
+    max-width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

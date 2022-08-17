@@ -110,6 +110,9 @@
 @media (min-width: 613px) {
   .header {
     display: flex;
+    &__wrapper{
+      padding-top: 50px;
+    }
     &__description {
       max-width: 350px;
     }

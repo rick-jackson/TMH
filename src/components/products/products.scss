@@ -1,11 +1,16 @@
 .products {
-  padding: 0px 40px;
-  padding-top: 100px;
   max-width: 1024px;
-  margin: auto;
+  padding: 0px 40px;
+  padding-top: 170px;
   display: flex;
-  flex-direction: column;
-  &__wrapper {
+  margin: auto;
+
+  &__wrapper{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  &__container {
     margin: auto;
     max-width: 100%;
     margin: auto;
@@ -19,5 +24,6 @@
     line-height: 32px;
     border-top: 1px solid #487acd;
     margin-right: auto;
+    width: 100%;
   }
 }
