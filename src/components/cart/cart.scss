@@ -1,4 +1,16 @@
 .cart{
-  padding: 0px 40px;
+  padding: 40px 40px;
   padding-top: 80px;
+  max-width: 1366px;
+  margin: auto;
+  padding-top: 170px;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .cart {
+    padding-top: 100px;
+  }
 }

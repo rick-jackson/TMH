@@ -15,6 +15,12 @@
   top: 40px;
   color: #fff;
   right: -17px;
+  &_desktop{
+    display: none;
+  }
+  &_mobile{
+    display: block;
+  }
   &__title {
     font-weight: 700;
     font-size: 18px;
@@ -79,6 +85,12 @@
     color: #000;
     left: 0;
     padding-left: 0;
+    &_mobile {
+      display: none;
+    }
+    &_desktop{
+      display: block;
+    }
     &__item-value {
       border: 1px solid #000;
       color: #000;

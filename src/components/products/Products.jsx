@@ -7,19 +7,21 @@ import { connect } from "react-redux";
 import {useLocation} from 'react-router-dom'
 import Filter from "../filter/Filter";
 import filterIcon from '../../common/img/icon/filter.svg'
+import { useState } from "react";
 
 const Products = ({ productsData }) => {
 
 const title = useLocation().state
-
+const [showFilter, setShowFilter] = useState(false)
 
 
   return (
     <section className="products">
       <div className="products__wrapper">
-      <Filter/>
+      <Filter type={'mobile'} showFilter={showFilter} />
+      <Filter type={'desktop'} showFilter={true}/>
       <div className="products__container">
-      <div className="products__title">Наша продукція <img className="products__filter" src={filterIcon} alt="" /></div>
+      <div className="products__title">Наша продукція <img onClick={()=>{setShowFilter(!showFilter)}} className="products__filter" src={filterIcon} alt="" /></div>
       {productsData.map((product) => (
         <Product key={product.id} product={product} title={title}/>
       ))}
