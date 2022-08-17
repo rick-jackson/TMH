@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React  from "react";
 import "./product.scss";
 import { connect } from "react-redux";
 import { addProduct } from "../../store/actions/cart.actions";
 
 const Product = ({ product, addProduct }) => {
-  const [selectedSize, setSelectedSize] = useState([]);
   return (
     <div className="product">
       {product.discount && (
@@ -52,7 +51,7 @@ const Product = ({ product, addProduct }) => {
         </div>
       <button
         className="product__add-cart"
-        onClick={() => addProduct({ ...product, selectedSize })}
+        onClick={() => addProduct(product)}
         >
         В корзину
       </button>
