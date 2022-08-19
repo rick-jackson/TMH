@@ -8,13 +8,13 @@ const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
   const [count, setCount] = useState(product.count);
 
   const countMinus = (id) => {
-    counterMinus(id)
+    counterMinus(id);
     setCount(count - 1);
   };
 
   const countPlus = (id) => {
     setCount(count + 1);
-    counterPlus(id)
+    counterPlus(id);
   };
 
   return (
@@ -50,7 +50,7 @@ const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
             <div className="product__counter">
               <button
                 onClick={() => {
-                  countMinus(product.id)
+                  countMinus(product.id);
                 }}
                 className="product__counter-button"
                 disabled={product.count === 1 ? true : false}

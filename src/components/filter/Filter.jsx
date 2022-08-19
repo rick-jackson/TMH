@@ -2,9 +2,25 @@ import React, { useState } from "react";
 import "./filter.scss";
 import Range from "rc-slider";
 import "rc-slider/assets/index.css";
+import { connect } from "react-redux";
+import { productsSelector } from "../../store/selectors/products.selectors";
 
-const Filter = ({ type, showFilter }) => {
-  const [priceValue, setPriceValue] = useState([20, 40]);
+const Filter = ({ type, showFilter, productsData }) => {
+  const priceProduct = productsData.map((product) => {
+    if (product.discount) {
+      return product.price - (product.price * product.discount) / 100;
+    } else {
+      return product.price;
+    }
+  });
+
+  console.log(priceProduct);
+
+  const [priceValue, setPriceValue] = useState([
+    Math.min.apply(null, priceProduct),
+    Math.max.apply(null, priceProduct),
+  ]);
+
   return (
     <section
       className={`filter filter_${type}`}
@@ -46,7 +62,8 @@ const Filter = ({ type, showFilter }) => {
             </div>
             <Range
               range
-              defaultValue={[0, 100]}
+              max={Math.max.apply(null, priceProduct)}
+              min={Math.min.apply(null, priceProduct)}
               onChange={(value) => setPriceValue(value)}
               value={priceValue}
             />
@@ -87,4 +104,11 @@ const Filter = ({ type, showFilter }) => {
   );
 };
 
-export default Filter;
+const mapState = (state) => {
+  return {
+    productsData: productsSelector(state),
+  };
+};
+const connector = connect(mapState);
+
+export default connector(Filter);
