@@ -11,12 +11,13 @@
     font-weight: 700;
     font-size: 24px;
     cursor: pointer;
+    margin-right: 15px;
   }
   &__counter-value {
-    margin: 0px 10px;
+    margin-right: 15px;
   }
-  &__remove{
-    color: #897D7D;
+  &__remove {
+    color: #897d7d;
     font-size: 42px;
     font-weight: 400;
     transform: rotate(45deg);

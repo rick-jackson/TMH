@@ -6,9 +6,10 @@ import ProductCart from "../productCart/ProductCart";
 import { removeProduct } from "../../store/actions/cart.actions";
 
 const Cart = ({ productsData, removeProduct }) => {
-  useEffect(() => {
-    console.log(productsData);
-  });
+  const purchaseSum = productsData.reduce((acc, value) => {
+    return acc + Number(value.price) * value.count;
+  }, 0);
+
   return (
     <section className="cart">
       {productsData.map((product) => {
@@ -17,7 +18,11 @@ const Cart = ({ productsData, removeProduct }) => {
 
       {productsData.length > 0 && (
         <div className="cart__purchase">
-          <span className="cart__purchase-value"></span>
+          <div className="cart__purchase-value">
+            {" "}
+            <span>До сплати:</span> <span> {purchaseSum} ₴</span>
+          </div>
+
           <button className="cart__purchase-payable product__add-cart">
             Перейти до оформлення
           </button>
