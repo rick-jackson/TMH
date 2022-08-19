@@ -2,8 +2,21 @@ import React from "react";
 import "./productsCart.scss";
 import { connect } from "react-redux";
 import { counterMinus, counterPlus } from "../../store/actions/cart.actions";
+import { useState } from "react";
 
 const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
+  const [count, setCount] = useState(product.count);
+
+  const countMinus = (id) => {
+    counterMinus(id)
+    setCount(count - 1);
+  };
+
+  const countPlus = (id) => {
+    setCount(count + 1);
+    counterPlus(id)
+  };
+
   return (
     <div className="product">
       <div
@@ -37,7 +50,7 @@ const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
             <div className="product__counter">
               <button
                 onClick={() => {
-                  counterMinus(product.id);
+                  countMinus(product.id)
                 }}
                 className="product__counter-button"
                 disabled={product.count === 1 ? true : false}
@@ -47,7 +60,7 @@ const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
               <span className="product__counter-value">{product.count}</span>
               <button
                 className="product__counter-button"
-                onClick={() => counterPlus(product.id)}
+                onClick={() => countPlus(product.id)}
               >
                 +
               </button>
