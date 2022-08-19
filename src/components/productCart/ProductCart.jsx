@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import "./productsCart.scss";
 
 const ProductCart = ({ product, removeProduct }) => {
