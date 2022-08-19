@@ -51,7 +51,7 @@ const Product = ({ product, addProduct }) => {
         </div>
       <button
         className="product__add-cart"
-        onClick={() => addProduct(product)}
+        onClick={() => addProduct({...product, count: 1})}
         >
         В корзину
       </button>

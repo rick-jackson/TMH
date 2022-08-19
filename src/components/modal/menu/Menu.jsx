@@ -46,23 +46,28 @@ const Menu = ({ showMenu, setShowMenu, type }) => {
           />
         </li>
         <li className="modal__item_products">
-        <ul
-          className="modal__products"
-          style={
-            showProducts ? { display: "inline-block" } : { display: "none" }
-          }
-        >
-          {menuList.map((item) => (
-            <li key={item} className="modal__products-item" onClick={()=>setShowProducts(false)}>
-              <Link
-                style={{ color: "#fff" }}
-                to={`/products/${translite(item)}`}
-                state={item}>
-                {item}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          <ul
+            className="modal__products"
+            style={
+              showProducts ? { display: "inline-block" } : { display: "none" }
+            }
+          >
+            {menuList.map((item) => (
+              <li
+                key={item}
+                className="modal__products-item"
+                onClick={() => setShowProducts(false)}
+              >
+                <Link
+                  style={{ color: "#fff" }}
+                  to={`/products/${translite(item)}`}
+                  state={item}
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </li>
         <ScrollLilnk
           activeClass="active"
@@ -79,10 +84,24 @@ const Menu = ({ showMenu, setShowMenu, type }) => {
           </li>
         </ScrollLilnk>
 
-        <li className="modal__item"  onClick={() => setShowMenu(false)}>блог</li>
-        <li className="modal__item"  onClick={() => setShowMenu(false)}>Наші контакти</li>
-        <li className="modal__item modal__item_mobile"  onClick={() => setShowMenu(false)}>Пошук</li>
-        <li className="modal__item modal__item_mobile"  onClick={() => setShowMenu(false)}>мова</li>
+        <li className="modal__item" onClick={() => setShowMenu(false)}>
+          блог
+        </li>
+        <li className="modal__item" onClick={() => setShowMenu(false)}>
+          Наші контакти
+        </li>
+        <li
+          className="modal__item modal__item_mobile"
+          onClick={() => setShowMenu(false)}
+        >
+          Пошук
+        </li>
+        <li
+          className="modal__item modal__item_mobile"
+          onClick={() => setShowMenu(false)}
+        >
+          мова
+        </li>
       </ul>
     </div>
   );
