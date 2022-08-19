@@ -1,4 +1,9 @@
-import { ADD_PRODUCT, REMOVE_PRODUCT } from "../actions/cart.actions";
+import {
+  ADD_PRODUCT,
+  REMOVE_PRODUCT,
+  COUNTER_MINUS,
+  COUNTER_PLUS,
+} from "../actions/cart.actions";
 
 const initialState = {
   cartData: [],
@@ -33,6 +38,33 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cartData: state.cartData.filter((el) => el.id !== action.payload.id),
+      };
+    }
+
+    case COUNTER_PLUS: {
+      console.log(state.cartData)
+      return {
+        ...state,
+        cartData: state.cartData.map((item) => {
+          if (item.id === action.payload.id) {
+            item.count += 1;
+            return item;
+          }
+          return item;
+        }),
+      };
+    }
+    case COUNTER_MINUS: {
+      console.log(state.cartData)
+      return {
+        ...state,
+        cartData: state.cartData.map((item) => {
+          if (item.id === action.payload.id) {
+            item.count -= 1;
+            return item;
+          }
+          return item;
+        }),
       };
     }
 

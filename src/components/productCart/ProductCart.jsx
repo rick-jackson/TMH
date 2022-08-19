@@ -1,7 +1,9 @@
 import React from "react";
 import "./productsCart.scss";
+import { connect } from "react-redux";
+import { counterMinus, counterPlus } from "../../store/actions/cart.actions";
 
-const ProductCart = ({ product, removeProduct }) => {
+const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
   return (
     <div className="product">
       <div
@@ -34,13 +36,21 @@ const ProductCart = ({ product, removeProduct }) => {
           <span className="product__price-item">
             <div className="product__counter">
               <button
+                onClick={() => {
+                  counterMinus(product.id);
+                }}
                 className="product__counter-button"
                 disabled={product.count === 1 ? true : false}
               >
                 -
               </button>
               <span className="product__counter-value">{product.count}</span>
-              <button className="product__counter-button">+</button>
+              <button
+                className="product__counter-button"
+                onClick={() => counterPlus(product.id)}
+              >
+                +
+              </button>
             </div>{" "}
             {product.discount
               ? (
@@ -56,4 +66,11 @@ const ProductCart = ({ product, removeProduct }) => {
   );
 };
 
-export default ProductCart;
+const mapDispatch = {
+  counterPlus: counterPlus,
+  counterMinus: counterMinus,
+};
+
+const connector = connect(null, mapDispatch);
+
+export default connector(ProductCart);

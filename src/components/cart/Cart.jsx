@@ -13,7 +13,7 @@ const Cart = ({ productsData, removeProduct }) => {
   return (
     <section className="cart">
       {productsData.map((product) => {
-        return <ProductCart product={product} removeProduct={removeProduct} />;
+        return <ProductCart  product={product} removeProduct={removeProduct} />;
       })}
 
       {productsData.length > 0 && (
