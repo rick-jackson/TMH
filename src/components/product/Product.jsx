@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import "./product.scss";
 import { connect } from "react-redux";
 import { addProduct } from "../../store/actions/cart.actions";
@@ -17,6 +17,12 @@ const Product = ({ product, addProduct }) => {
           <span className="product__description_bold">Опис:</span>{" "}
           {product.description}
         </p>
+        {product.application && (
+          <p className="product__description">
+            <span className="product__description_bold">Застосування:</span>{" "}
+            {product.application}
+          </p>
+        )}
         {/* <div className="product__size">
           Розміри:{" "}
           {product.size.map((item) => (
@@ -49,13 +55,13 @@ const Product = ({ product, addProduct }) => {
             </span>
           )}
         </div>
-      <button
-        className="product__add-cart"
-        onClick={() => addProduct({...product, count: 1})}
+        <button
+          className="product__add-cart"
+          onClick={() => addProduct({ ...product, count: 1 })}
         >
-        В корзину
-      </button>
-        </div>
+          В корзину
+        </button>
+      </div>
     </div>
   );
 };
