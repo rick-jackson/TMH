@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { translite } from "../../../utils/translit";
 import "../modal.scss";
 import { Link as ScrollLilnk } from "react-scroll";
+import { useEffect } from "react";
 
-const Menu = ({ showMenu, setShowMenu, type }) => {
+const Menu = ({ showMenu, setShowMenu, type, scroll, location }) => {
   const [showProducts, setShowProducts] = useState(false);
+  useEffect(() => {
+    setShowProducts(false);
+  }, [scroll, location]);
   const menuList = [
     "рукавички нітрилові",
     "рукавиці латексні",

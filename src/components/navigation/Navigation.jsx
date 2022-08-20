@@ -8,19 +8,19 @@ import shoppingIcon from "../../common/img/icon/shopping.svg";
 import burgerIcon from "../../common/img/icon/burger.svg";
 import { connect } from "react-redux";
 import { cartSelector } from "../../store/selectors/cart.selector";
-import desktopLogo from '../../common/img/logo/logo-desktop.svg'
+import desktopLogo from "../../common/img/logo/logo-desktop.svg";
 
-const Navigation = ({ showNav, productsData, lastScroll }) => {
-  const url = useLocation().pathname === "/";
+const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
+  const location = useLocation().pathname;
+  const url = location === "/";
 
   const [showMenu, setShowMenu] = useState(false);
-  const [showPhone, setShowPhone] = useState(false)
+  const [showPhone, setShowPhone] = useState(false);
 
   useEffect(() => {
-    if (!showNav) {
-      setShowMenu(false);
-    }
-  }, [showNav]);
+    setShowMenu(false);
+    setShowPhone(false);
+  }, [scroll, location]);
 
   const stylesNav = {
     color: url ? "#fff" : "#000",
@@ -33,22 +33,42 @@ const Navigation = ({ showNav, productsData, lastScroll }) => {
       <div className="navigation__wrapper">
         <div className="navigation__container">
           <Link to={"/"}>
-            <img className="navigation__logo navigation__logo_mobile" src={mobileLogo} alt="logo" />
+            <img
+              className="navigation__logo navigation__logo_mobile"
+              src={mobileLogo}
+              alt="logo"
+            />
           </Link>
           <Link to={"/"}>
-            <img className="navigation__logo navigation__logo_desktop" src={desktopLogo} alt="logo" />
+            <img
+              className="navigation__logo navigation__logo_desktop"
+              src={desktopLogo}
+              alt="logo"
+            />
           </Link>
           <ul
             className="navigation__phone"
             style={url ? { color: "#fff" } : { color: "#000" }}
           >
-            <li className="navigation__phone-item" onClick={()=>setShowPhone(!showPhone)}>(067) 570 - 34 - 89</li>
-            <li className="navigation__phone-item navigation__phone-item_hiden" style={{display: showPhone ? 'inline-block' : 'none'}} >
+            <li
+              className="navigation__phone-item"
+              onClick={() => setShowPhone(!showPhone)}
+            >
+              (067) 570 - 34 - 89
+            </li>
+            <li
+              className="navigation__phone-item navigation__phone-item_hiden"
+              style={{ display: showPhone ? "inline-block" : "none" }}
+            >
               (095) 458 - 67 - 23
             </li>
           </ul>
 
-        <input className="navigation__search" type="text" placeholder="Пошук"/>
+          <input
+            className="navigation__search"
+            type="text"
+            placeholder="Пошук"
+          />
 
           <Link to={"cart"}>
             <div className="navigation__icon-cart">
@@ -76,9 +96,20 @@ const Navigation = ({ showNav, productsData, lastScroll }) => {
             height="25"
             onClick={() => setShowMenu(!showMenu)}
           />
-          <Menu showMenu={showMenu} setShowMenu={setShowMenu} type={'mobile'}/>
+          <Menu
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+            type={"mobile"}
+            scroll={scroll}
+            location={location}
+          />
         </div>
-        <Menu showMenu={true} type={'desktop'}/>
+        <Menu
+          showMenu={true}
+          type={"desktop"}
+          scroll={scroll}
+          location={location}
+        />
       </div>
     </nav>
   );

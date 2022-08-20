@@ -71,6 +71,12 @@
     color: rgb(255, 255, 255);
     font-weight: 700;
     font-size: 16px;
+    transition: 0.3s;
+    border: 2px solid #487acd;
+    &:hover {
+      background: #fff;
+      color: #487acd;
+    }
   }
 }
 

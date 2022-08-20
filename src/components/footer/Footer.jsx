@@ -1,6 +1,7 @@
 import React from "react";
 import "./footer.scss";
 import logoIcon from "../../common/img/logo/logo-desktop.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="footer__wrapper">
         <div className="footer__nav">
           <ul className="footer__nav-list">
-            <li className="footer__list-item">наша продукція</li>
+          <Link to={"products"}><li className="footer__list-item">наша продукція</li></Link>
             <li className="footer__list-item">про компанію</li>
             <li className="footer__list-item">блог</li>
           </ul>

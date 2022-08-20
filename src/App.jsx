@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <Router>
         <Provider store={store}>
-          <Navigation showNav={showNav} lastScroll={scroll} />
+          <Navigation showNav={showNav} lastScroll={scroll} scroll={scroll}/>
           <Main />
           <Footer />
         </Provider>
