@@ -4,11 +4,11 @@ import { HandySvg } from "handy-svg";
 import "./navigation.scss";
 import Menu from "../modal/menu/Menu";
 import mobileLogo from "../../common/img/logo/Logo mobile.svg";
-import shoppingIcon from "../../common/img/icon/shopping.svg";
-import burgerIcon from "../../common/img/icon/burger.svg";
+import { ReactComponent as ShoppingIcon} from "../../common/img/icon/shopping.svg";
+import {  ReactComponent as  BurgerIcon} from "../../common/img/icon/burger.svg";
+import desktopLogo from "../../common/img/logo/logo-desktop.svg";
 import { connect } from "react-redux";
 import { cartSelector } from "../../store/selectors/cart.selector";
-import desktopLogo from "../../common/img/logo/logo-desktop.svg";
 
 const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
   const location = useLocation().pathname;
@@ -73,8 +73,7 @@ const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
           <Link to={"cart"}>
             <div className="navigation__icon-cart">
               <div className="shopping">{productsData.length}</div>
-              <HandySvg
-                src={shoppingIcon}
+              <ShoppingIcon
                 className={
                   url
                     ? "navigation__icon"
@@ -85,8 +84,7 @@ const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
               />
             </div>
           </Link>
-          <HandySvg
-            src={burgerIcon}
+          <BurgerIcon
             className={
               url
                 ? "navigation__burger navigation__icon"

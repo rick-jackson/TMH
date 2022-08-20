@@ -42,11 +42,18 @@
       top: 30px;
     }
   }
-  &__icon {
+  &__icon  {
     margin-left: 32px;
     fill: none;
+    color: #487acd;
+    stroke: #fff;
+    transition: 0.3s;
     &_dark {
-      filter: invert(100%);
+      stroke: #555453;
+    }
+    &:hover{
+      stroke: #487acd;
+
     }
   }
 
