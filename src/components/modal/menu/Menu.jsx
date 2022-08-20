@@ -81,19 +81,21 @@ const Menu = ({ showMenu, setShowMenu, type, scroll, location }) => {
           offset={-70}
           duration={1000}
         >
-          <li className="modal__item" onClick={() => setShowMenu(false)}>
-            <Link style={{ color: "#fff" }} to="/">
+          <Link to="/">
+            <li className="modal__item" onClick={() => setShowMenu(false)}>
               про компанію{" "}
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ScrollLilnk>
 
         <li className="modal__item" onClick={() => setShowMenu(false)}>
           блог
         </li>
-        <li className="modal__item" onClick={() => setShowMenu(false)}>
-          Наші контакти
-        </li>
+        <Link to="/contacts">
+          <li className="modal__item" onClick={() => setShowMenu(false)}>
+            Наші контакти
+          </li>
+        </Link>
         <li
           className="modal__item modal__item_mobile"
           onClick={() => setShowMenu(false)}

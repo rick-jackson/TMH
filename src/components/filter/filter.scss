@@ -16,6 +16,7 @@
   color: #fff;
   right: -17px;
   &_desktop{
+
     display: none;
   }
   &_mobile{
@@ -77,14 +78,16 @@
 @media (min-width: 840px) {
   .filter {
     position: relative;
-    max-width: 200px;
-    padding: 10px;
+    max-width: 210px;
+    padding: 15px;
     background: none;
     box-shadow: none;
     top: 0px;
     color: #000;
     left: 0;
-    padding-left: 0;
+    // padding-left: 0;
+    background: #fff;
+    height: fit-content;
     &_mobile {
       display: none;
     }
