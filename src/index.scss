@@ -12,20 +12,7 @@
   font-weight: 700;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  background-color: #f7f7f8;
-}
 
-.App {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
 
 body {
   font-family: "circe", sans-serif;
@@ -118,3 +105,33 @@ h6 {
   padding: 0;
 }
 /*--------------------*/
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f8;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+html, body{
+  height: 100%;
+}
+
+main{
+  flex: 1 1 auto;
+}
+
+#root{
+  height: 100%;
+  display: flex;
+}
