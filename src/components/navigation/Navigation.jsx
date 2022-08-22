@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { HandySvg } from "handy-svg";
 import "./navigation.scss";
 import Menu from "../modal/menu/Menu";
 import mobileLogo from "../../common/img/logo/Logo mobile.svg";

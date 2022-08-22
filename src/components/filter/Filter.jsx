@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./filter.scss";
 import Range from "rc-slider";
 import "rc-slider/assets/index.css";
 import { connect } from "react-redux";
 import { productsSelector } from "../../store/selectors/products.selectors";
+import { useEffect } from "react";
 
 const Filter = ({ type, showFilter, productsData }) => {
   const priceProduct = productsData.map((product) => {
@@ -14,13 +16,23 @@ const Filter = ({ type, showFilter, productsData }) => {
     }
   });
 
-  console.log(priceProduct);
-
+  // const [filterData, setFilterData] = useState({});
   const [priceValue, setPriceValue] = useState([
     Math.min.apply(null, priceProduct),
     Math.max.apply(null, priceProduct),
   ]);
 
+  const navigate = useNavigate();
+  const newPath = (urlPage, price) =>
+    navigate(`${urlPage}?price=${price[0]}-${price[1]}`);
+  const { pathname } = useLocation();
+
+  const handleChange = (e) => {};
+
+  useEffect(() => {
+    newPath(pathname, priceValue);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [priceValue]);
   return (
     <section
       className={`filter filter_${type}`}
@@ -34,7 +46,7 @@ const Filter = ({ type, showFilter, productsData }) => {
     >
       <div className="filter__wrapper">
         <h4 className="filter__title">Фільтр по параметрам</h4>
-        <form className="filter__form" action="#">
+        <form className="filter__form" action="#" onChange={handleChange}>
           <div className="filter__item filter__item_price">
             <h5 className="filter__item-title">Ціна</h5>
             <div className="filter__item-values">

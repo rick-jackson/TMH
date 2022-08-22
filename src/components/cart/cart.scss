@@ -1,11 +1,27 @@
 .cart {
+ 
   padding: 40px 40px;
-  padding-top: 80px;
   max-width: 1366px;
-  margin: auto;
   padding-top: 170px;
-  display: flex;
-  flex-direction: column;
+  margin: auto;
+  &__wrapper{
+    border-top: 1px solid #487acd;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+
+    margin-right: auto;
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__purchase {
     font-weight: 700;
     font-size: 18px;

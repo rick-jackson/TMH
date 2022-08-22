@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import "./cart.scss";
 import { connect } from "react-redux";
 import { cartSelector } from "../../store/selectors/cart.selector";
@@ -12,22 +12,27 @@ const Cart = ({ productsData, removeProduct }) => {
 
   return (
     <section className="cart">
-      {productsData.map((product) => {
-        return <ProductCart  product={product} removeProduct={removeProduct} />;
-      })}
+      <div className="cart__wrapper">
+        <div className="cart__title">Корзина</div>
+        {productsData.map((product) => {
+          return (
+            <ProductCart product={product} removeProduct={removeProduct} />
+          );
+        })}
 
-      {productsData.length > 0 && (
-        <div className="cart__purchase">
-          <div className="cart__purchase-value">
-            {" "}
-            <span>До сплати:</span> <span> {purchaseSum} ₴</span>
+        {productsData.length > 0 && (
+          <div className="cart__purchase">
+            <div className="cart__purchase-value">
+              {" "}
+              <span>До сплати:</span> <span> {purchaseSum} ₴</span>
+            </div>
+
+            <button className="cart__purchase-payable product__add-cart">
+              Перейти до оформлення
+            </button>
           </div>
-
-          <button className="cart__purchase-payable product__add-cart">
-            Перейти до оформлення
-          </button>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 };
