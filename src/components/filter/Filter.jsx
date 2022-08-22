@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { productsSelector } from "../../store/selectors/products.selectors";
 import { useEffect } from "react";
 
-const Filter = ({ type, showFilter, productsData }) => {
+const Filter = ({ type, showFilter, productsData, setPrice }) => {
   const priceProduct = productsData.map((product) => {
     if (product.discount) {
       return product.price - (product.price * product.discount) / 100;
@@ -30,6 +30,7 @@ const Filter = ({ type, showFilter, productsData }) => {
   const handleChange = (e) => {};
 
   useEffect(() => {
+    setPrice(priceValue)
     newPath(pathname, priceValue);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [priceValue]);
