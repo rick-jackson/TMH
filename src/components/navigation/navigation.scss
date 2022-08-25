@@ -14,6 +14,10 @@
     width: 100%;
     padding: 30px 40px;
   }
+  &__container {
+    display: flex;
+    align-items: center;
+  }
   &__logo {
     &_desktop {
       display: none;
@@ -21,7 +25,6 @@
   }
   &__search {
     display: none;
-
   }
   &__container {
     display: flex;
@@ -32,28 +35,27 @@
     flex-direction: column;
     margin-left: auto;
     position: relative;
-
   }
   &__phone-item {
     margin: auto;
     cursor: pointer;
-    &_hiden{
+    &_hiden {
       position: absolute;
       top: 30px;
     }
   }
-  &__icon  {
+  &__icon {
     margin-left: 32px;
     fill: none;
     color: #487acd;
     stroke: #fff;
     transition: 0.3s;
+    height: 100%;
     &_dark {
       stroke: #555453;
     }
-    &:hover{
+    &:hover {
       stroke: #487acd;
-
     }
   }
 
@@ -81,9 +83,15 @@
 }
 
 @media (min-width: 600px) {
+  .hamburger-menu {
+    display: none;
+  }
   .navigation {
     display: flex;
     flex-direction: column;
+    &__wrapper {
+      padding: 30px 40px;
+    }
     &__burger {
       display: none;
     }
@@ -102,7 +110,129 @@
       background: rgba(244, 245, 248, 0.7);
       border-radius: 5px;
       padding-left: 15px;
-      max-width:  290px;
+      max-width: 290px;
+      height: 30px;
     }
+  }
+}
+
+@media (max-width: 600px) {
+  #menu__toggle {
+    opacity: 0;
+    position: absolute;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    right: 0;
+  }
+
+  .menu__btn {
+    // margin: auto;
+    display: flex;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    position: relative;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .menu-white {
+    span {
+      background-color: #fff;
+      &::before {
+        background-color: #fff;
+      }
+
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .menu-dark {
+    span {
+      background-color: #555453;
+      &::before {
+        background-color: #555453;
+      }
+
+      &::after {
+        background-color: #555453;
+      }
+    }
+  }
+
+
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    transition-duration: 0.25s;
+  }
+  .menu__btn > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: "";
+    top: 8px;
+  }
+
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    z-index: 2;
+    width: 300px;
+    height: 100%;
+
+    margin: 0;
+    padding: 80px 0;
+
+    list-style: none;
+
+    background-color: #487acd;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+
+    transition-duration: 0.25s;
+  }
+
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+
+    color: #333;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition-duration: 0.25s;
+  }
+  .menu__item:hover {
+    background-color: #cfd8dc;
   }
 }

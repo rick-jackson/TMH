@@ -3,8 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./navigation.scss";
 import Menu from "../modal/menu/Menu";
 import mobileLogo from "../../common/img/logo/Logo mobile.svg";
-import { ReactComponent as ShoppingIcon} from "../../common/img/icon/shopping.svg";
-import {  ReactComponent as  BurgerIcon} from "../../common/img/icon/burger.svg";
+import { ReactComponent as ShoppingIcon } from "../../common/img/icon/shopping.svg";
 import desktopLogo from "../../common/img/logo/logo-desktop.svg";
 import { connect } from "react-redux";
 import { cartSelector } from "../../store/selectors/cart.selector";
@@ -13,11 +12,11 @@ const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
   const location = useLocation().pathname;
   const url = location === "/";
 
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
 
   useEffect(() => {
-    setShowMenu(false);
+    // setShowMenu(false);
     setShowPhone(false);
   }, [scroll, location]);
 
@@ -83,30 +82,27 @@ const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
               />
             </div>
           </Link>
-          <BurgerIcon
-            className={
-              url
-                ? "navigation__burger navigation__icon"
-                : "navigation__burger navigation__icon navigation__icon_dark"
-            }
-            width="25"
-            height="25"
-            onClick={() => setShowMenu(!showMenu)}
-          />
+
+          <div className="hamburger-menu navigation__icon">
+            <input id="menu__toggle" type="checkbox" />
+            <label
+              className={`menu__btn ${url ? "menu-white" : "menu-dark"}`}
+              htmlFor="menu__toggle"
+            >
+              <span></span>
+            </label>
+
+            <Menu />
+          </div>
+        </div>
+        <div className={`modal modal_desktop`}>
           <Menu
-            showMenu={showMenu}
-            setShowMenu={setShowMenu}
-            type={"mobile"}
+            showMenu={true}
+            type={"desktop"}
             scroll={scroll}
             location={location}
           />
         </div>
-        <Menu
-          showMenu={true}
-          type={"desktop"}
-          scroll={scroll}
-          location={location}
-        />
       </div>
     </nav>
   );

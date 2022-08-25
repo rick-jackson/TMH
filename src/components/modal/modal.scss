@@ -1,5 +1,4 @@
 .modal {
-
   background: #487acd;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
@@ -17,22 +16,9 @@
   overflow: hidden;
   animation: 0.3s linear 0s alternate show-menu;
   color: #fff;
-  
+
   &_desktop {
     display: none;
-  }
-  &__item {
-    color: #fff;
-    font-size: 14px;
-    line-height: 21px;
-    margin-top: 10px;
-    cursor: pointer;
-    &:first-child {
-      margin-top: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
   }
   &__products {
     margin-top: 18px;
@@ -78,6 +64,28 @@
 }
 
 @media (min-width: 600px) {
+  .menu {
+    &__box {
+      height: 100%;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      display: flex;
+    }
+    &__item {
+      color: #fff;
+      font-size: 14px;
+      line-height: 21px;
+      margin-top: 10px;
+      cursor: pointer;
+      &:first-child {
+        margin-top: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
   .modal {
     max-width: 100%;
     background: #487acd;
@@ -89,13 +97,6 @@
     top: 0;
     overflow: visible;
 
-    &__list {
-      height: 100%;
-      align-items: center;
-      justify-content: space-around;
-      width: 100%;
-      display: flex;
-    }
     &__products {
       // position: absolute;
       display: flex;
@@ -122,7 +123,7 @@
       text-transform: uppercase;
       cursor: pointer;
       margin-top: 0;
- 
+
       &_mobile {
         display: none;
       }
@@ -140,13 +141,11 @@
   }
 }
 
-
-
-.background{
+.background {
   min-height: 100vh;
   min-width: 100vw;
   background-color: rgba(255, 255, 255, 0.267);
-  position:fixed;
+  position: fixed;
   z-index: 1;
   left: 0;
   top: 0;

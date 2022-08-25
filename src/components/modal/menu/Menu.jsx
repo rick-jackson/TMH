@@ -11,105 +11,93 @@ const Menu = ({ showMenu, setShowMenu, type, scroll, location }) => {
     setShowProducts(false);
   }, [scroll, location]);
   const menuList = [
-    "рукавички нітрилові",
-    "рукавиці латексні",
-    "рукавички медичні",
-    "рукавички хірургічні",
-    "хімічна промисловість і фармацевтика",
-    "оглядові рукавички",
-    "стоматологічні",
-    "для клінігових робіт",
-    "сад / город",
-    "емонт і будівництво",
-    "для салонів краси",
-    "господарські рукавички",
+    "Рукавички нітрилові",
+    "Рукавиці латексні",
+    "Рукавички медичні",
+    "Рукавички хірургічні",
+    "Хімічна промисловість і фармацевтика",
+    "Оглядові рукавички",
+    "Стоматологічні",
+    "Для клінігових робіт",
+    "Сад / город",
+    "Ремонт і будівництво",
+    "Для салонів краси",
+    "Господарські рукавички",
   ];
 
-  const styleMobileMenu = {
-    display: showMenu ? "block" : "none",
-  };
-
   return (
-    <div
-      className={`modal modal_${type}`}
-      style={type === "mobile" ? styleMobileMenu : {}}
-    >
-      <ul className="modal__list">
-        <li
-          className="modal__item"
-          onClick={() => setShowProducts(!showProducts)}
+    <ul className="menu__box">
+      <li className="menu__item" onClick={() => setShowProducts(!showProducts)}>
+        {`наша продукція`}{" "}
+        <div
+          className="modal__products-arrow"
+          style={
+            showProducts
+              ? { transform: "rotate(180deg)" }
+              : { transform: "rotate(0)" }
+          }
+        />
+      </li>
+      <li className="modal__item_products">
+        <ul
+          className="modal__products"
+          style={
+            showProducts ? { display: "inline-block" } : { display: "none" }
+          }
         >
-          {`наша продукція`}{" "}
-          <div
-            className="modal__products-arrow"
-            style={
-              showProducts
-                ? { transform: "rotate(180deg)" }
-                : { transform: "rotate(0)" }
-            }
-          />
-        </li>
-        <li className="modal__item_products">
-          <ul
-            className="modal__products"
-            style={
-              showProducts ? { display: "inline-block" } : { display: "none" }
-            }
-          >
-            {menuList.map((item) => (
-              <li
-                key={item}
-                className="modal__products-item"
-                onClick={() => setShowProducts(false)}
+          {menuList.map((item) => (
+            <li
+              key={item}
+              className="modal__products-item"
+              onClick={() => setShowProducts(false)}
+            >
+              <Link
+                style={{ color: "#fff" }}
+                to={`/products/${translite(item)}`}
+                state={item}
               >
-                <Link
-                  style={{ color: "#fff" }}
-                  to={`/products/${translite(item)}`}
-                  state={item}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </li>
-        <ScrollLilnk
-          activeClass="active"
-          to="about"
-          spy={false}
-          smooth={true}
-          offset={-70}
-          duration={1000}
-        >
-          <Link to="/">
-            <li className="modal__item" onClick={() => setShowMenu(false)}>
-              про компанію{" "}
+                {item}
+              </Link>
             </li>
-          </Link>
-        </ScrollLilnk>
-
-        <li className="modal__item" onClick={() => setShowMenu(false)}>
-          блог
-        </li>
-        <Link to="/contacts">
-          <li className="modal__item" onClick={() => setShowMenu(false)}>
-            Наші контакти
+          ))}
+        </ul>
+      </li>
+      <ScrollLilnk
+        activeClass="active"
+        to="about"
+        spy={false}
+        smooth={true}
+        offset={-70}
+        duration={1000}
+      >
+        <Link to="/">
+          <li className="menu__item" onClick={() => setShowMenu(false)}>
+            про компанію{" "}
           </li>
         </Link>
-        <li
-          className="modal__item modal__item_mobile"
-          onClick={() => setShowMenu(false)}
-        >
-          Пошук
+      </ScrollLilnk>
+
+      <li className="menu__item" onClick={() => setShowMenu(false)}>
+        блог
+      </li>
+      <Link to="/contacts">
+        <li className="menu__item" onClick={() => setShowMenu(false)}>
+          Наші контакти
         </li>
-        <li
-          className="modal__item modal__item_mobile"
-          onClick={() => setShowMenu(false)}
-        >
-          мова
-        </li>
-      </ul>
-    </div>
+      </Link>
+      <li
+        className="menu__item modal__item_mobile"
+        onClick={() => setShowMenu(false)}
+      >
+        Пошук
+      </li>
+      <li
+        className="menu__item modal__item_mobile"
+        onClick={() => setShowMenu(false)}
+      >
+        мова
+      </li>
+    </ul>
   );
 };
 
