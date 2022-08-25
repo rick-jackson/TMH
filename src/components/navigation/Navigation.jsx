@@ -12,11 +12,11 @@ const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
   const location = useLocation().pathname;
   const url = location === "/";
 
-  // const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
 
   useEffect(() => {
-    // setShowMenu(false);
+    setShowMenu(false);
     setShowPhone(false);
   }, [scroll, location]);
 
@@ -84,7 +84,7 @@ const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
           </Link>
 
           <div className="hamburger-menu navigation__icon">
-            <input id="menu__toggle" type="checkbox" />
+            <input id="menu__toggle" type="checkbox" checked={showMenu} onClick={()=>setShowMenu(!showMenu)}/>
             <label
               className={`menu__btn ${url ? "menu-white" : "menu-dark"}`}
               htmlFor="menu__toggle"
