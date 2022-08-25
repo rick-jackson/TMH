@@ -1,4 +1,4 @@
-.product-page {
+.product-page {s
   &__image {
     width: 100%;
   }
@@ -49,9 +49,8 @@
       margin-left: auto;
       button {
         background: none;
-        &:disabled{
+        &:disabled {
           fill: grey;
-          
         }
       }
     }
@@ -62,7 +61,7 @@
     line-height: 35px;
     margin-left: 20px;
   }
-  &__add-cart{
+  &__add-cart {
     margin-top: 20px;
     padding: 12px 35px;
     height: auto;

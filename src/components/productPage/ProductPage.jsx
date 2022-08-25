@@ -7,15 +7,18 @@ import { connect } from "react-redux";
 import { addProduct } from "../../store/actions/cart.actions";
 import { ReactComponent as ArrowUp } from "../../common/img/icon/number-arrow-up.svg";
 import { ReactComponent as ArrowDown } from "../../common/img/icon/number-arrow-down.svg";
+import Spinner from "../spinner/Spinner";
 
-const ProductPage = ({addProduct}) => {
+const ProductPage = ({ addProduct }) => {
   const url = useLocation();
   const productId = url.pathname.split("/")[2];
   const baseUrl = `https://63073f64c0d0f2b8012a6eca.mockapi.io/product`;
   const [productData, setProductData] = useState({});
   const [number, setNumber] = useState(1);
+  const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
+    setIsFetching(true);
     fetch(`${baseUrl}/${productId}`)
       .then((response) => {
         if (response.ok) {
@@ -23,8 +26,15 @@ const ProductPage = ({addProduct}) => {
         }
         return [];
       })
-      .then((product) => setProductData(product));
+      .then((product) => {
+        setProductData(product);
+        setIsFetching(false);
+      });
   }, [baseUrl, productId]);
+
+  if (isFetching) {
+    return <Spinner />;
+  }
 
   return (
     <section className="cart">
@@ -45,12 +55,14 @@ const ProductPage = ({addProduct}) => {
               <div className="product-page__number">
                 <span>{number}</span>
                 <div>
-                  <button onClick={() => setNumber(number + 1)}><ArrowUp/></button>
+                  <button onClick={() => setNumber(number + 1)}>
+                    <ArrowUp />
+                  </button>
                   <button
                     disabled={number === 1 ? true : false}
                     onClick={() => setNumber(number - 1)}
                   >
-                    <ArrowDown/>
+                    <ArrowDown />
                   </button>
                 </div>
               </div>
