@@ -2,6 +2,7 @@ import React from "react";
 import "./product.scss";
 import { connect } from "react-redux";
 import { addProduct } from "../../store/actions/cart.actions";
+import { Link } from "react-router-dom";
 
 const Product = ({ product, addProduct }) => {
   return (
@@ -23,21 +24,6 @@ const Product = ({ product, addProduct }) => {
             {product.application}
           </p>
         )}
-        {/* <div className="product__size">
-          Розміри:{" "}
-          {product.size.map((item) => (
-            <div className="product__size-item" key={item}>
-              <input
-                type="checkbox"
-                id="size"
-                onClick={(e) => {
-                 setSelectedSize({...selectedSize, item})
-                }}
-              />
-              <label htmlFor="size">{item}</label>
-            </div>
-          ))}
-        </div> */}
         <div className="product__price">
           <span className="product__price-item">
             <span className="product__price_word">Ціна:</span>{" "}
@@ -61,6 +47,12 @@ const Product = ({ product, addProduct }) => {
         >
           В корзину
         </button>
+        <Link to={`/products/${product.id}`}>
+          {" "}
+          <button className="product__add-cart product__add-cart_detail">
+            Детальніше
+          </button>
+        </Link>
       </div>
     </div>
   );

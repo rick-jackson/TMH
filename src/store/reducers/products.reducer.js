@@ -1,14 +1,14 @@
 import { PRODUCTS_DATA_RECIEVED } from "../actions/products.actions";
-import { productData } from "../../utils/productsData";
 
 const initialState = {
-  productsData: productData,
+  productsData: [],
 };
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
     case PRODUCTS_DATA_RECIEVED: {
-      return state;
+
+      return { ...state, productsData: action.payload.productsData };
     }
     default: {
       return state;

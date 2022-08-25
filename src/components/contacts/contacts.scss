@@ -9,9 +9,12 @@
 
   padding-top: 100px;
   margin: auto;
-  &__wrapper {
+  &__container{
+
     max-width: 1287px;
     margin: auto;
+  }
+  &__wrapper {
     border-top: 1px solid #487acd;
     display: flex;
     flex-direction: column;

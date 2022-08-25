@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import "./products.scss";
 import Product from "../product/Product";
-import { getProductsData } from "../../store/actions/products.actions";
 import { productsSelector } from "../../store/selectors/products.selectors";
 import { connect } from "react-redux";
 import Filter from "../filter/Filter";
 import filterIcon from "../../common/img/icon/filter.svg";
-
+import { Link } from "react-router-dom";
 
 const Products = ({ productsData }) => {
   const [showFilter, setShowFilter] = useState(false);
-  const [price, setPrice] = useState([])
+  const [price, setPrice] = useState([]);
 
 
   return (
     <section className="products">
+      <div className="history">
+        <Link to={"/"}>Головна</Link> / <Link to={"/products"}>Продукція</Link>
+      </div>
       <div className="products__wrapper">
-        <Filter type={"mobile"} showFilter={showFilter} setPrice={setPrice}/>
-        <Filter type={"desktop"} showFilter={true} setPrice={setPrice}/>
+        <Filter type={"mobile"} showFilter={showFilter} setPrice={setPrice} />
+        <Filter type={"desktop"} showFilter={true} setPrice={setPrice} />
         <div className="products__container">
           <div className="products__title">
             Наша продукція{" "}
@@ -41,15 +43,12 @@ const Products = ({ productsData }) => {
   );
 };
 
-const mapDispatch = {
-  getFlightList: getProductsData,
-};
 
 const mapState = (state) => {
   return {
     productsData: productsSelector(state),
   };
 };
-const connector = connect(mapState, mapDispatch);
+const connector = connect(mapState);
 
 export default connector(Products);

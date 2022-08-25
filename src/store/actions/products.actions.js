@@ -1,4 +1,4 @@
-const baseUrl = `https://api.iev.aero/api/flights`;
+const baseUrl = `https://63073f64c0d0f2b8012a6eca.mockapi.io/product`;
 export const PRODUCTS_DATA_RECIEVED = "PRODUCTS_DATA_RECIEVED";
 export const SHOW_SPINNER = "SHOW_SPINNER";
 

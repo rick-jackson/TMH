@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { cartSelector } from "../../store/selectors/cart.selector";
 import ProductCart from "../productCart/ProductCart";
 import { removeProduct } from "../../store/actions/cart.actions";
+import { Link } from "react-router-dom";
 
 const Cart = ({ productsData, removeProduct }) => {
   const purchaseSum = productsData.reduce((acc, value) => {
@@ -12,6 +13,7 @@ const Cart = ({ productsData, removeProduct }) => {
 
   return (
     <section className="cart">
+      <div className="history"><Link to={'/'}>Головна</Link> / <Link to={'/cart'}>Корзина</Link></div>
       <div className="cart__wrapper">
         <div className="cart__title">Корзина</div>
         {productsData.map((product) => {

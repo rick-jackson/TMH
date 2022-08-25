@@ -12,7 +12,7 @@
   background-color: #fff;
   &__add-cart {
     margin-top: 12px;
-    width: 125px;
+    min-width: 125px;
     height: 35px;
     left: 19px;
     top: 345px;
@@ -27,6 +27,15 @@
     &:hover {
       background: #fff;
       color: #487acd;
+    }
+    &_detail {
+      background: #fff;
+      color: #487acd;
+      margin-left: 10px;
+      &:hover {
+        background: #487acd;
+        color: #fff;
+      }
     }
   }
 

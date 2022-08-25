@@ -1,9 +1,12 @@
 import React from "react";
 import "./contacts.scss";
+import { Link } from "react-router-dom";
 
 const Contacts = () => {
   return (
     <section className="contacts">
+      <div className="contacts__container">
+       <div className="history" style={{color:'#fff'}}><Link style={{color:'#fff'}} to={'/'}>Головна</Link> / <Link to={'/contacts'} style={{color:'#fff'}}>Контакти</Link></div>
       <div className="contacts__wrapper">
         <h4 className="contacts__title">Контакти</h4>
         <div className="contacts__column">
@@ -38,6 +41,7 @@ const Contacts = () => {
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
