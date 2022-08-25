@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import { addProduct } from "../../store/actions/cart.actions";
+import { ReactComponent as ArrowUp } from "../../common/img/icon/number-arrow-up.svg";
+import { ReactComponent as ArrowDown } from "../../common/img/icon/number-arrow-down.svg";
 
 const ProductPage = ({addProduct}) => {
   const url = useLocation();
@@ -43,12 +45,12 @@ const ProductPage = ({addProduct}) => {
               <div className="product-page__number">
                 <span>{number}</span>
                 <div>
-                  <button onClick={() => setNumber(number + 1)}>⯅</button>
+                  <button onClick={() => setNumber(number + 1)}><ArrowUp/></button>
                   <button
                     disabled={number === 1 ? true : false}
                     onClick={() => setNumber(number - 1)}
                   >
-                    ⯆
+                    <ArrowDown/>
                   </button>
                 </div>
               </div>

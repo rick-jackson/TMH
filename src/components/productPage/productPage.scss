@@ -49,6 +49,10 @@
       margin-left: auto;
       button {
         background: none;
+        &:disabled{
+          fill: grey;
+          
+        }
       }
     }
   }
