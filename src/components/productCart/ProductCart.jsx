@@ -58,10 +58,10 @@ const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
               </button>
             </div>{" "}
             {product.discount
-              ? (
+              ? ((
                   product.price -
                   (product.price * product.discount) / 100
-                ).toFixed(2) * product.count
+                ) * product.count).toFixed(2)
               : product.price * product.count}{" "}
             <span className="product__price-item_currency">₴</span>
           </span>

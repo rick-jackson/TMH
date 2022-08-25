@@ -68,10 +68,10 @@ const ProductPage = ({ addProduct }) => {
               </div>
               <span className="product-page__price-item">
                 {productData.discount
-                  ? (
+                  ? ((
                       productData.price -
                       (productData.price * productData.discount) / 100
-                    ).toFixed(2) * number
+                    ) * number).toFixed(2)
                   : productData.price * number}{" "}
                 <span className="product-page__price-item_currency">₴</span>
               </span>
