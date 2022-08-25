@@ -82,6 +82,12 @@
     line-height: 18px;
     text-transform: uppercase;
     font-weight: 700;
+    a{
+      color: #232120;
+      &:hover{
+        text-decoration:underline;
+      }
+    }
   }
   &__subtitle {
     font-weight: 700;

@@ -15,9 +15,6 @@ const Main = ({ getProductsData }) => {
     getProductsData();
   }, [getProductsData]);
 
-
-
-
   
   return (
     <main className="main">

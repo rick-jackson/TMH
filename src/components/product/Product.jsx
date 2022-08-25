@@ -12,7 +12,7 @@ const Product = ({ product, addProduct }) => {
       )}
       <img className="product__image" src={product.image} alt="product" />
       <div className="product__about">
-        <h5 className="product__title">{product.name}</h5>
+     <h5 className="product__title"> <Link to={`/products/${product.id}`}>{product.name}</Link></h5>
         <h5 className="product__subtitle">{product.producer}</h5>
         <p className="product__description">
           <span className="product__description_bold">Опис:</span>{" "}

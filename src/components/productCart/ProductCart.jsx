@@ -3,6 +3,7 @@ import "./productsCart.scss";
 import { connect } from "react-redux";
 import { counterMinus, counterPlus } from "../../store/actions/cart.actions";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
   const [count, setCount] = useState(product.count);
@@ -30,21 +31,12 @@ const ProductCart = ({ product, removeProduct, counterPlus, counterMinus }) => {
       )}
       <img className="product__image" src={product.image} alt="product" />
       <div className="product__about">
-        <h5 className="product__title">{product.name}</h5>
+      <h5 className="product__title"> <Link to={`/products/${product.id}`}>{product.name}</Link></h5>
         <h5 className="product__subtitle">{product.producer}</h5>
         <p className="product__description">
           <span className="product__description_bold">Опис:</span>{" "}
           {product.description}
         </p>
-        {/* <div className="product__size">
-      Розміри:{" "}
-      {product.size.map((item) => (
-        <div className="product__size-item" key={item}>
-          <input type="checkbox" id="size" onClick={(e)=>console.log(product.selectedSize['M'])}/>
-          <label htmlFor="size">{item}</label>
-        </div>
-      ))}
-    </div> */}
         <div className="product__price">
           <span className="product__price-item">
             <div className="product__counter">

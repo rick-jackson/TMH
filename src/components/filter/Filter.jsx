@@ -29,9 +29,11 @@ const Filter = ({ type, showFilter, productsData, setPrice }) => {
 
   useEffect(() => {
     setPrice(priceValue);
-    // newPath(pathname, priceValue);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   newPath(pathname, priceValue);
+  //   eslint-disable-next-line react-hooks/exhaustive-deps
   }, [priceValue]);
+
+
   return (
     <section
       className={`filter filter_${type}`}
