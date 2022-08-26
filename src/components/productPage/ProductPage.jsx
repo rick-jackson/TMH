@@ -9,6 +9,24 @@ import { ReactComponent as ArrowUp } from "../../common/img/icon/number-arrow-up
 import { ReactComponent as ArrowDown } from "../../common/img/icon/number-arrow-down.svg";
 import Spinner from "../spinner/Spinner";
 
+
+
+const Description = () =>{
+  return( <h4 className="product-content__title">Загальна інформація</h4>)
+}
+
+
+
+const Additional  = () =>{
+  return( <h4 className="product-content__title">Додаткова інформація</h4>)
+}
+
+
+const Application = () =>{
+  return( <h4 className="product-content__title">Застосування</h4>)
+}
+
+
 const ProductPage = ({ addProduct }) => {
   const url = useLocation();
   const productId = url.pathname.split("/")[2];
@@ -16,6 +34,7 @@ const ProductPage = ({ addProduct }) => {
   const [productData, setProductData] = useState({});
   const [number, setNumber] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
+  const [components, setComponents] = useState(<Description/>)
 
   useEffect(() => {
     setIsFetching(true);
@@ -85,12 +104,12 @@ const ProductPage = ({ addProduct }) => {
           </div>
           <div className="product-content">
             <div className="product-content__navigation">
-              <button className="product-content__navigation-button">Опис</button>
-              <button className="product-content__navigation-button">Додаткова інформація</button>
-              <button className="product-content__navigation-button">Застосування</button>
+              <button className="product-content__navigation-button" onClick={()=>{setComponents(<Description/>)}}>Опис</button>
+              <button className="product-content__navigation-button" onClick={()=>{setComponents(<Additional/>)}}>Додаткова інформація</button>
+              <button className="product-content__navigation-button" onClick={()=>{setComponents(<Application/>)}}>Застосування</button>
             </div>
                     <div className="product-content__container">
-                      <h4 className="product-content__title">Загальна інформація</h4>
+                    {components}
                     </div>
           </div>
         </div>
