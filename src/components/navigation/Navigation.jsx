@@ -84,7 +84,12 @@ const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
           </Link>
 
           <div className="hamburger-menu navigation__icon">
-            <input id="menu__toggle" type="checkbox" checked={showMenu} onChange={(e)=>setShowMenu(e.target.checked)}/>
+            <input
+              id="menu__toggle"
+              type="checkbox"
+              checked={showMenu}
+              onChange={(e) => setShowMenu(e.target.checked)}
+            />
             <label
               className={`menu__btn ${url ? "menu-white" : "menu-dark"}`}
               htmlFor="menu__toggle"
@@ -116,3 +121,6 @@ const mapState = (state) => {
 const connector = connect(mapState);
 
 export default connector(Navigation);
+
+
+
