@@ -93,16 +93,13 @@
     line-height: 21px;
     color: #b8bdc0;
     padding: 15px;
-    border-bottom: 1px solid #b8bdc0;
     border-left: 1px solid #b8bdc0;
-    box-sizing: border-box;
     cursor: pointer;
     &:first-child {
       border-left: none;
     }
   }
   &__container {
-    box-sizing: border-box;
     border-top: 1px solid #b8bdc0;
     margin: 0;
   }

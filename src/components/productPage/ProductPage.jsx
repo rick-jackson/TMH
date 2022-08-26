@@ -105,9 +105,22 @@ const ProductPage = ({ addProduct }) => {
           </div>
           <div className="product-content">
             <div className="product-content__navigation">
-              <button className="product-content__navigation-button" style={components === 'Description' ? {color: '#000', borderBottom: '1px solid #f7f7f8'} : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}} onClick={()=>{setComponents('Description')}}>Опис</button>
-              <button className="product-content__navigation-button"style={components === 'Additional' ? {color: '#000', borderBottom: '1px solid #f7f7f8'} : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}}  onClick={()=>{setComponents('Additional')}}>Додаткова інформація</button>
-              <button className="product-content__navigation-button" style={components === 'Application' ? {color: '#000', borderBottom: '1px solid #f7f7f8'} : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}}  onClick={()=>{setComponents('Application')}}>Застосування</button>
+              <button className="product-content__navigation-button" 
+                style={components === 'Description' 
+                  ? {color: '#000', borderBottom: '2px solid #f7f7f8'} 
+                  : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}} 
+                    onClick={()=>{setComponents('Description')}}>Опис</button>
+
+              <button className="product-content__navigation-button"
+                style={components === 'Additional' 
+                  ? {color: '#000', borderBottom: '2px solid #f7f7f8'} 
+                  : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}}  
+                    onClick={()=>{setComponents('Additional')}}>Додаткова інформація</button>
+              <button className="product-content__navigation-button" 
+                style={components === 'Application' 
+                  ? {color: '#000', borderBottom: '2px solid #f7f7f8'} 
+                  : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}}  
+                    onClick={()=>{setComponents('Application')}}>Застосування</button>
             </div>
                     <div className="product-content__container">
                     {components === 'Description' && <Description/>}
