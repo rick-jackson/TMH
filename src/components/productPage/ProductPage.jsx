@@ -34,7 +34,8 @@ const ProductPage = ({ addProduct }) => {
   const [productData, setProductData] = useState({});
   const [number, setNumber] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
-  const [components, setComponents] = useState(<Description/>)
+  const [components, setComponents] = useState('Description')
+
 
   useEffect(() => {
     setIsFetching(true);
@@ -104,12 +105,14 @@ const ProductPage = ({ addProduct }) => {
           </div>
           <div className="product-content">
             <div className="product-content__navigation">
-              <button className="product-content__navigation-button" onClick={()=>{setComponents(<Description/>)}}>Опис</button>
-              <button className="product-content__navigation-button" onClick={()=>{setComponents(<Additional/>)}}>Додаткова інформація</button>
-              <button className="product-content__navigation-button" onClick={()=>{setComponents(<Application/>)}}>Застосування</button>
+              <button className="product-content__navigation-button" style={components === 'Description' ? {color: '#000', borderBottom: '1px solid #fff'} : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}} onClick={()=>{setComponents('Description')}}>Опис</button>
+              <button className="product-content__navigation-button"style={components === 'Additional' ? {color: '#000', borderBottom: '1px solid #fff'} : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}}  onClick={()=>{setComponents('Additional')}}>Додаткова інформація</button>
+              <button className="product-content__navigation-button" style={components === 'Application' ? {color: '#000', borderBottom: '1px solid #fff'} : {color: '#b8bdc0', borderBottom: '1px solid #b8bdc0'}}  onClick={()=>{setComponents('Application')}}>Застосування</button>
             </div>
                     <div className="product-content__container">
-                    {components}
+                    {components === 'Description' && <Description/>}
+                    {components === 'Additional' && <Additional/>}
+                    {components === 'Application' && <Application/>}
                     </div>
           </div>
         </div>
