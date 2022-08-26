@@ -1,5 +1,5 @@
 .product-page {
-   &__image {
+  &__image {
     max-width: 100%;
   }
   &__info {
@@ -81,6 +81,9 @@
     top: 1px;
     max-width: 100%;
     overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &__navigation-button {
     white-space: nowrap;
