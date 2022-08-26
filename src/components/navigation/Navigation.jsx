@@ -14,6 +14,9 @@ const Navigation = ({ showNav, productsData, lastScroll, scroll }) => {
 
   const [showMenu, setShowMenu] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
+  
+  
+
 
   useEffect(() => {
     setShowMenu(false);

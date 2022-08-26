@@ -83,6 +83,16 @@ const ProductPage = ({ addProduct }) => {
               Додати в корзину
             </button>
           </div>
+          <div className="product-content">
+            <div className="product-content__navigation">
+              <button className="product-content__navigation-button">Опис</button>
+              <button className="product-content__navigation-button">Додаткова інформація</button>
+              <button className="product-content__navigation-button">Застосування</button>
+            </div>
+                    <div className="product-content__container">
+                      <h4 className="product-content__title">Загальна інформація</h4>
+                    </div>
+          </div>
         </div>
       </div>
     </section>
