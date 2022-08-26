@@ -120,7 +120,7 @@
     flex-direction: column;
     font-size: 16px;
     line-height: 21px;
-    &:first-child{
+    &:first-child {
       border-top: 1px solid #b8bdc0;
     }
     &_bold {
@@ -128,10 +128,24 @@
       width: 100%;
       font-weight: 700;
     }
+    &_additional {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      font-size: 16px;
+      line-height: 21px;
+      color: #232120;
+      padding: 15px 0px;
+      border-bottom: 1px solid #b8bdc0;
+      &:first-child {
+        font-weight: 700;
+      }
+      span {
+        min-width: 145px;
+      }
+    }
   }
 }
-
-
 
 @media (min-width: 800px) {
   .product-content {
@@ -140,6 +154,6 @@
       &_bold {
         margin-right: 5px;
       }
+    }
   }
-}
 }
