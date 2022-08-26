@@ -119,9 +119,9 @@
 @media (max-width: 600px) {
   #menu__toggle {
     opacity: 0;
+    display: none;
     position: absolute;
   }
-
   #menu__toggle:checked ~ .menu__btn > span {
     transform: rotate(45deg);
   }
@@ -134,12 +134,12 @@
     transform: rotate(90deg);
   }
   #menu__toggle:checked ~ .menu__box {
+    
     visibility: visible;
     right: 0;
   }
 
   .menu__btn {
-    // margin: auto;
     display: flex;
     align-items: center;
     width: 26px;
@@ -214,13 +214,16 @@
   }
 
   .menu__item {
-    display: block;
+    align-items: center;
+    justify-content: left;
+    display: flex;
     padding: 12px 24px;
-    color: #333;
+    color: #fff;
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
     transition-duration: 0.25s;
+    text-transform: uppercase;
   }
   .menu__item:hover {
     background-color: #cfd8dc;
