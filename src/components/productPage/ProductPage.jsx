@@ -8,23 +8,17 @@ import { addProduct } from "../../store/actions/cart.actions";
 import { ReactComponent as ArrowUp } from "../../common/img/icon/number-arrow-up.svg";
 import { ReactComponent as ArrowDown } from "../../common/img/icon/number-arrow-down.svg";
 import Spinner from "../spinner/Spinner";
+import Description from "./Description";
+import Additional from "./Additional";
+import Application from "./Application";
 
 
 
-const Description = () =>{
-  return( <h4 className="product-content__title">Загальна інформація</h4>)
-}
 
 
 
-const Additional  = () =>{
-  return( <h4 className="product-content__title">Додаткова інформація</h4>)
-}
 
 
-const Application = () =>{
-  return( <h4 className="product-content__title">Застосування</h4>)
-}
 
 
 const ProductPage = ({ addProduct }) => {
