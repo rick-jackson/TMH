@@ -4,9 +4,6 @@ import "./pagination.scss";
 const Pagination = ({page, totalPages, prevPage, nextPage, setPage, }) => {
   return (
 <div className="pagination">
-  <p className="pagination__text">
-    {page}/{totalPages}
-  </p>
   <button onClick={prevPage} className="pagination__button">
     &larr;
   </button>
