@@ -5,7 +5,7 @@ import cartReducer from "./reducers/cart.reducer";
 
 const reducer = combineReducers({
   products: productsReducer,
-  cart: cartReducer
+  cart: cartReducer,
 });
 
 export const store = createStore(reducer, applyMiddleware(thunk));

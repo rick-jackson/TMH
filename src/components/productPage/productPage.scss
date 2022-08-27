@@ -4,6 +4,7 @@
   }
   &__info {
     margin-top: 20px;
+    max-width: 500px;
   }
   &__title {
     font-weight: 700;
@@ -154,6 +155,22 @@
       &_bold {
         margin-right: 5px;
       }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .product-page {
+    &__image {
+      min-width: 400px;
+      max-width: 100%;
+      height: 100%;
+      margin: auto 0px;
+      margin-right: 40px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
     }
   }
 }

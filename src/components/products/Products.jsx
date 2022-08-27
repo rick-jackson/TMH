@@ -6,17 +6,27 @@ import { connect } from "react-redux";
 import Filter from "../filter/Filter";
 import filterIcon from "../../common/img/icon/filter.svg";
 import { Link } from "react-router-dom";
+import Pagination from "../pagination/Pagination";
+import usePagination from "../../hooks/usePagination";
 
-
-const Products = ({ productsData, isFetching }) => {
+const Products = ({ productsData }) => {
   const [showFilter, setShowFilter] = useState(false);
   const [price, setPrice] = useState([]);
 
-
-
+  const {
+    firstContentIndex,
+    lastContentIndex,
+    nextPage,
+    prevPage,
+    page,
+    setPage,
+    totalPages,
+  } = usePagination({
+    contentPerPage: 7,
+    count: productsData.length,
+  });
 
   return (
-  
     <section className="products">
       <div className="history">
         <Link to={"/"}>Головна</Link> / <Link to={"/products"}>Продукція</Link>
@@ -38,9 +48,17 @@ const Products = ({ productsData, isFetching }) => {
           </div>
           {productsData
             .filter((item) => item.price >= price[0] && item.price <= price[1])
+            .slice(firstContentIndex, lastContentIndex)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
+          <Pagination
+            nextPage={nextPage}
+            prevPage={prevPage}
+            page={page}
+            setPage={setPage}
+            totalPages={totalPages}
+          />
         </div>
       </div>
     </section>
@@ -53,6 +71,7 @@ const mapState = (state) => {
     isFetching: state.products.isFetching,
   };
 };
+
 const connector = connect(mapState);
 
 export default connector(Products);

@@ -58,6 +58,7 @@ const ProductPage = ({ addProduct }) => {
       </div>
       <div className="cart__wrapper">
         <div className="product-page">
+          <div className="product-page__wrapper">
           <img src={productData.image} alt="" className="product-page__image" />
           <div className="product-page__info">
             <h3 className="product-page__title">{productData.name}</h3>
@@ -96,6 +97,7 @@ const ProductPage = ({ addProduct }) => {
             >
               Додати в корзину
             </button>
+          </div>
           </div>
           <div className="product-content">
             <div className="product-content__navigation">
